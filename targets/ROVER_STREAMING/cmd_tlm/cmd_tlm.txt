@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# Port 22001 - nginx static file server. Requires its own INTERFACE in plugin.txt
+# because HttpClientInterface is bound to a single host and port.
+# ---------------------------------------------------------------------------
+
+COMMAND <%= target_name %> GET_STREAMING_DOWNLOAD BIG_ENDIAN "Downloads the last recorded video (nginx on port 22001)"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/binary_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/streaming/download"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_STREAMING_DOWNLOAD_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_STREAMING_DOWNLOAD_RESPONSE BIG_ENDIAN "Response from GET /settings/streaming/download"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/binary_accessor.py
+  ITEM HTTP_STATUS 0 0 DERIVED
+  ITEM HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED "Response content type, video/mp4"
+    KEY Content-Type
+  ITEM HTTP_HEADER_CONTENT_DISPOSITION 0 0 DERIVED "Attachment filename, e.g. record.mp4"
+    KEY Content-Disposition
+  ITEM HTTP_HEADER_LAST_MODIFIED 0 0 DERIVED "Time the recording was written"
+    KEY Last-Modified
+  ITEM VIDEO 0 0 BLOCK "Raw MP4 video data"

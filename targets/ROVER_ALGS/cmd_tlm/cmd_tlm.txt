@@ -1,0 +1,82 @@
+# ---------------------------------------------------------------------------
+# Port 22002 - algs (algorithms) service. Requires its own INTERFACE in plugin.txt
+# because HttpClientInterface is bound to a single host and port.
+# ---------------------------------------------------------------------------
+
+COMMAND <%= target_name %> GET_SPEED_RATIO BIG_ENDIAN "Gets the movement speed ratio (algs service on port 22002)"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/algs/settings/movement/speedRatio"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_SPEED_RATIO_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_SPEED_RATIO_RESPONSE BIG_ENDIAN "Response from GET /algs/settings/movement/speedRatio"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"ratio":50}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM RATIO 32 INT "Movement speed as a percentage of maximum"
+    KEY $.ratio
+
+COMMAND <%= target_name %> GET_OBSTACLE_AVOIDANCE BIG_ENDIAN "Gets the obstacle avoidance state (algs service on port 22002)"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/algs/settings/movement/obstacleAvoidance"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_OBSTACLE_AVOIDANCE_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_OBSTACLE_AVOIDANCE_RESPONSE BIG_ENDIAN "Response from GET /algs/settings/movement/obstacleAvoidance"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"open":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM OPEN 8 BOOL "TRUE if obstacle avoidance is enabled"
+    KEY $.open
+
+COMMAND <%= target_name %> SET_OBSTACLE_AVOIDANCE BIG_ENDIAN "Enables or disables obstacle avoidance (algs service on port 22002)"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"open":true}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/algs/settings/movement/obstacleAvoidance"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_OBSTACLE_AVOIDANCE_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER OPEN 8 BOOL TRUE "TRUE enables obstacle avoidance, FALSE disables it"
+    KEY $.open
+
+TELEMETRY <%= target_name %> SET_OBSTACLE_AVOIDANCE_RESPONSE BIG_ENDIAN "Response from POST /algs/settings/movement/obstacleAvoidance"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"message":"Obstacle avoidance setting successful","status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM MESSAGE 512 STRING "Result message"
+    KEY $.message
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the setting was applied"
+    KEY $.status

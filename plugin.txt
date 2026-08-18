@@ -1,0 +1,26 @@
+# LANGUAGE python
+# Set VARIABLEs here to allow variation in your plugin
+
+VARIABLE rover_target_name ROVER
+VARIABLE rover_mode LEG
+  VARIABLE_STATE LEG LEG
+  VARIABLE_STATE WHEEL WHEEL
+VARIABLE client_hostname 192.168.1.6
+VARIABLE client_port 22000
+VARIABLE client_streaming_port 22001
+VARIABLE client_algs_port 22002
+VARIABLE client_protocol http
+
+TARGET ROVER <%= rover_target_name %>
+TARGET ROVER_STREAMING <%= rover_target_name %>_STREAMING
+TARGET ROVER_ALGS <%= rover_target_name %>_ALGS
+
+INTERFACE <%= rover_target_name %>_INT openc3/interfaces/http_client_interface.py <%= client_hostname %> <%= client_port %> http 5.0 5.0
+  MAP_TARGET <%= rover_target_name %>
+  OPTION PERIODIC_CMD DONT_LOG 1.0 "<%= rover_target_name %> GET_PROTOCOL_EXCHANGE"
+
+INTERFACE <%= rover_target_name %>_STREAMING_INT openc3/interfaces/http_client_interface.py <%= client_hostname %> <%= client_streaming_port %> http 5.0 5.0
+  MAP_TARGET <%= rover_target_name %>_STREAMING
+
+INTERFACE <%= rover_target_name %>_ALGS_INT openc3/interfaces/http_client_interface.py <%= client_hostname %> <%= client_algs_port %> http 5.0 5.0
+  MAP_TARGET <%= rover_target_name %>_ALGS

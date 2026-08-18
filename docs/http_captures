@@ -1,0 +1,812 @@
+GET /algs/settings/movement/speedRatio HTTP/1.1
+Host: 192.168.1.6:22002
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Keep-Alive: timeout=5, max=100
+Content-Length: 12
+Content-Type: application/json
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+
+{"ratio":50}
+
+GET /settings/movement/params HTTP/1.1
+Host: 192.168.1.6:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Wed, 15 Jul 2026 23:17:10 GMT
+Content-Length: 20
+
+{"remainingTimes":9}
+
+GET /connection/state HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:24 GMT
+Content-Length: 96
+
+{"value":"connected","currentClient":2,"clientName":"apple iPhone 17 Pro","connectionType":"4G"}
+
+POST /connection/state HTTP/1.1
+Host: 192.168.1.39:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 81
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"currentClient":2,"clientName":"apple iPhone 17 Pro","connectionType":"Station"}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:24 GMT
+Content-Length: 15
+
+{"status":true}
+
+GET /settings/lock HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:24 GMT
+Content-Length: 16
+
+{"locked":false}
+
+GET /settings/version HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:24 GMT
+Content-Length: 445
+
+{"controller":"1.2.1.0-stable-6cddf59ce-202606250914-Global","system":"v1.1.0","algs":"1.2.1.0-stable+e553923.202606301415","can":"1.0.3.7","bms":"1.0.2.1","batteryGroupId":"0.0.0.2","audio":"3.2.5","servo":{"left_front_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"right_front_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"left_rear_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"right_rear_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"]}}
+
+GET /settings/uid HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 59
+
+{"time":"2026-07-09T23:47:33.993Z","uid":"ryan@openc3.com"}
+
+GET /properties/snCode HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 33
+
+{"snCode":"SL62026RXC1021A24002"}
+
+POST /settings/language HTTP/1.1
+Host: 192.168.1.39:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 17
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"language":"en"}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 15
+
+{"status":true}
+
+GET /properties/robotType HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 26
+
+{"robot_type":"RoverX1-W"}
+
+GET /properties/deviceProfile HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 32
+
+{"name":"RoverX1-W","remark":""}
+
+GET /properties/alarmsServo HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 91090
+
+[{"de":{"cause":"","description":"Überstromschutz der Hardware","solution":"Der tatsächliche Wert des vom Servo erfassten Stroms ist größer als 90 % des maximalen Abtaststroms der Hardware. Prüfen Sie, ob die Hardware i.O. ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Hardware overcurrent protection","solution":"If the actual current collected by the servo is greater than 90% of the maximum hardware sampling current, check whether the hardware is normal, or contact technical support engineers"},"es":{"cause":"","description":"Protección contra sobrecorriente de hardware","solution":"Si la corriente real recogida por el servo es superior al 90 % de la corriente máxima de muestreo del hardware, compruebe si el hardware es normal o comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"硬件过流保护","solution":"伺服采集的电流实际值大于硬件最大采样电流的90%，检查硬件是否正常，或联系技术支持工程师"},"id":8752,"ja":{"cause":"","description":"ハード過電流保護","solution":"サーボが収集した電流の実際の値が、ハードの最大サンプリング電流の90%より大きく、ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"하드웨어 과전류 보호","solution":"서보가 수집한 전류 실제 값이 하드웨어 최대 샘플링 전류의 90%보다 크면, 하드웨어 정상 여부를 확인하거나 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Аппаратная защита от перегрузки по току","solution":"Если фактический ток, собираемый сервоприводом, превышает 90 % от максимального тока выборки оборудования, проверьте исправность оборудования или обратитесь к инженерам службы технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"硬件过流保护","solution":"伺服采集的电流实际值大于硬件最大采样电流的90%，检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überstromschutz der Software","solution":"Stromausfall und Neustart, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Software over-current","solution":"Power off and restart controller, or please contact technical support engineer"},"es":{"cause":"","description":"Protección contra sobrecorriente de software","solution":"Apague y reinicie el controlador, o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"软件过流保护","solution":"断电重新启动，或联系技术支持工程师"},"id":8992,"ja":{"cause":"","description":"ソフト過電流保護","solution":"切断して再起動するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"소프트웨어 과전류 보호","solution":"전원을 끄고 리부팅하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Программная защита от перегрузки по току","solution":"Выключите и перезапустите контроллер или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"软件过流保护","solution":"断电重新启动，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überlastungsschutz des Moduls","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Module in overload status","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"Módulo en estado de sobrecarga","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"模块过载保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":9040,"ja":{"cause":"","description":"モジュール過負荷保護","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"모듈 과부하 보호","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Модуль в состоянии перегрузки","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"模块过载保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überlastungsschutz der Nullstromvorspannung","solution":"Nullpunkt-Stromvorspannung zurücksetzen"},"en":{"cause":"","description":"The current offset of homing point is too high","solution":"Reset the Zero point current offset"},"es":{"cause":"","description":"El desplazamiento actual del punto cero es demasiado alto","solution":"Restablezca el desplazamiento actual del punto cero"},"fr":{"cause":"","description":"零点电流偏置过大保护","solution":"重新设置零点电流偏置"},"id":9088,"ja":{"cause":"","description":"ゼロ点電流オフセット過大保護","solution":"ゼロ点電流オフセットを再設定します"},"ko":{"cause":"","description":"영점 전류 바이어스 과대 보호","solution":"영점 전류 바이어스를 다시 설정하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Текущее смещение нулевой точки слишком велико","solution":"Сброс текущего смещения нулевой точки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"零点电流偏置过大保护","solution":"重新设置零点电流偏置"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz gegen Phasenausfall am Antriebseingang","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Driver input phase is lost","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"Se ha perdido la fase de entrada del controlador","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"驱动器输入缺相保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":12592,"ja":{"cause":"","description":"ドライバ入力欠相保護","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"드라이버 입력 결상 보호","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Потеряна входная фаза привода","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"驱动器输入缺相保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überspannungsschutz zwischen PNs","solution":"Der Servo erkennt einen Busspannungswert, der größer als der eingestellte Schwellenwert ist; überprüfen Sie, ob die Hardware korrekt ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Voltage between PN is too high","solution":"The server detects that the bus voltage is greater than the preset threshold. Check whether the hardware is normal, or contact technical support engineers"},"es":{"cause":"","description":"El voltaje entre PN es demasiado alto","solution":"El servidor detecta que el voltaje de bus es mayor que el umbral preestablecido. Compruebe si el hardware es normal o comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"PN间过电压保护","solution":"伺服检测母线电压值大于设定的阈值，检查硬件是否正常，或联系技术支持工程师"},"id":12816,"ja":{"cause":"","description":"PN間過電流保護","solution":"バスバー電圧値が設定した閾値より大きいとサーボが検出し、ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"PN 간 과전압 보호","solution":"서보가 감지한 버스 전압값이 설정된 임계값보다 큽니다. 하드웨어가 정상인지 확인하거나 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Напряжение между PN слишком высокое","solution":"Сервер обнаружил, что напряжение на шине превышает заданный порог. Проверьте исправность оборудования или обратитесь к инженерам технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"PN间过电压保护","solution":"伺服检测母线电压值大于设定的阈值，检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Unterspannungsschutz zwischen PNs","solution":"Der Servo erkennt einen Busspannungswert, der unter dem eingestellten Schwellenwert liegt, prüfen Sie, ob die Hardware i.O. ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Voltage between PN is too low","solution":"The server detects that the bus voltage is less than the preset threshold. Check whether the hardware is normal, or contact technical support engineers"},"es":{"cause":"","description":"El voltaje entre PN es demasiado bajo","solution":"El servidor detecta que el voltaje de bus es menor que el umbral preestablecido. Compruebe si el hardware es normal o comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"PN间电压不足保护","solution":"伺服检测母线电压值小于设定的阈值，检查硬件是否正常，或联系技术支持工程师"},"id":12832,"ja":{"cause":"","description":"PN間電圧不足保護","solution":"バスバー電圧値が設定した閾値より小さいとサーボが検出し、ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"PN 간 전압 부족 보호","solution":"서보가 감지한 버스 전압값이 설정된 임계값보다 작습니다. 하드웨어가 정상인지 확인하거나 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Напряжение между PN слишком низкое","solution":"Сервер обнаружил, что напряжение на шине ниже заданного порога. Проверьте исправность оборудования или обратитесь к инженерам технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"PN间电压不足保护","solution":"伺服检测母线电压值小于设定的阈值，检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überspannungsschutz zwischen PNs","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Voltage between PN is too high","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"El voltaje entre PN es demasiado alto","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"PN间过电压保护","solution":"系统错误，请联系技术支持工程师"},"id":12816,"ja":{"cause":"","description":"PN間過電流保護","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"PN 간 과전압 보호","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Напряжение между PN слишком высокое","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"PN间过电压保护","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Unterspannungsschutz zwischen PNs","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Voltage between PN is too low","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"El voltaje entre PN es demasiado bajo","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"PN间电压不足保护","solution":"系统错误，请联系技术支持工程师"},"id":12832,"ja":{"cause":"","description":"PN間電圧不足保護","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"PN 간 전압 부족 보호","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Напряжение между PN слишком низкое","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"PN间电压不足保护","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Fehler bei der Leistungsanpassung von Servo und Motor","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Servo and motor power matching failure","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"Fallo de coincidencia de potencia del servo y del motor","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"伺服和电机功率匹配故障","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":12928,"ja":{"cause":"","description":"サーボとモータ電力の一致故障","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"서보 및 모터 전력 일치 오류","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Ошибка согласования мощности сервопривода и двигателя","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"伺服和电机功率匹配故障","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz gegen Fehler in der Phasenfolge des Antriebsausgangs","solution":"Verdrahtung in korrekter Phasenfolge"},"en":{"cause":"","description":"Driver output phase is wrong","solution":"Wire as the correct phase sequence"},"es":{"cause":"","description":"La fase de salida del controlador es incorrecta","solution":"Realice el cableado como la secuencia de fase correcta"},"fr":{"cause":"","description":"驱动器输出相序错误保护","solution":"按正确相序接线"},"id":13184,"ja":{"cause":"","description":"ドライバ出力相順エラー保護","solution":"正しい相順で接続してください"},"ko":{"cause":"","description":"드라이버 출력 위상 순서 오류 보호","solution":"올바른 위상 순서로 배선하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неправильная выходная фаза привода","solution":"Подключайте провода с соблюдением правильной последовательности фаз."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"驱动器输出相序错误保护","solution":"按正确相序接线"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Overcurrent 2","solution":"Check whether the hardware is normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"过流2","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":8768,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"过流2","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"DQ-axis Current Overflow Fault","solution":"Check whether the hardware is normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"DQ轴电流溢出故障","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":8977,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"DQ轴电流溢出故障","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Output-to-Ground Short Circuit","solution":"Check whether the hardware is normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"输出对地短路","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":9024,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"输出对地短路","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Control Power Under-voltage","solution":"Check whether the hardware is normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"控制电欠压","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":12576,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"控制电欠压","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Pulse Output Overspeed","solution":"Check whether the hardware is normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"脉冲输出过速","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":65296,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"脉冲输出过速","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Motor Overheating","solution":"Check whether the hardware is normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"电机过热","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":12851,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"电机过热","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überhitzungsschutz des Treibers","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Driver temperature is too high","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"La temperatura del controlador es demasiado alta","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"驱动器过热保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":17168,"ja":{"cause":"","description":"ドライバ過熱保護","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"드라이버 과열 보호","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Слишком высокая температура привода","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"驱动器过热保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Temperaturmesswiderstand beschädigt oder nicht installiert","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"The temperature measuring resistance is damaged or not installed","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"La resistencia de medición de temperatura está dañada o no se ha instalado","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"测温电阻损坏或未安装","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":17169,"ja":{"cause":"","description":"温度測定抵抗の損傷または設置されていない","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"온도 측정 저항이 파손되었거나 설치되지 않음","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Сопротивление для измерения температуры повреждено или не установлено.","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"测温电阻损坏或未安装","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz vor Erkennungsfehlern der Treiberplatte","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Driver recognition is abnormal","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"La identificación del controlador es anómala","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"驱动板辨识异常保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":21008,"ja":{"cause":"","description":"ドライバボード識別異常保護","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"구동 보드 인식 이상 보호","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Ненормальная идентификация привода","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"驱动板辨识异常保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"FPGA-Konfigurationsfehler","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"FPGA configuration is wrong","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"La configuración de FPGA es incorrecta","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"FPGA配置错误","solution":"系统错误，请联系技术支持工程师"},"id":21120,"ja":{"cause":"","description":"FPGA設定エラー","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"FPGA 설정 오류","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неверная конфигурация FPGA","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"FPGA配置错误","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Interner Fehler","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"System error","solution":"Please contact technical support engineer"},"es":{"cause":"","description":"Error interno","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"内部错误","solution":"系统错误，请联系技术支持工程师"},"id":21121,"ja":{"cause":"","description":"内部エラー","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"내부 오류","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Внутренняя ошибка","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"内部错误","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz gegen STO-Sicherheitsverdrahtungsfehler","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"STO safety wiring is fault","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"El cableado de seguridad de STO es anómalo","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"STO安全接线故障保护","solution":"系统错误，请联系技术支持工程师"},"id":21122,"ja":{"cause":"","description":"STO安全接続故障保護","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"STO 안전 배선 오류 보호","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неисправность защитной проводки STO","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"STO安全接线故障保护","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz vor Anschlussfehlern der Antriebsplatine","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Dirver connection is abnormal","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"La conexión del controlador es anómala","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"驱动板连接异常保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":21569,"ja":{"cause":"","description":"ドライバボード接続異常保護","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"구동 보드 연결 이상 보호","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Ненормальное подключение привода","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"驱动板连接异常保护","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Doppelte Zuweisung von DI-Funktionen","solution":"Überprüfung der DI-Gruppenparameter für dieselbe Funktion, die verschiedenen DIs zugewiesen ist"},"en":{"cause":"","description":"The DI function is repeatedly assigned","solution":"Check DI group parameters to see whether the same function is assigned to different DI's"},"es":{"cause":"","description":"La función de DI se asigna repetidamente","solution":"Compruebe los parámetros del grupo de DI para ver si la misma función está asignada a diferentes DI"},"fr":{"cause":"","description":"DI功能重复分配","solution":"检查DI组参数，是否有同一个功能分配在不同的DI上"},"id":25378,"ja":{"cause":"","description":"DI機能重複分配","solution":"DIグループパラメータを検査し、同一機能が異なるDIに分配されているかどうか"},"ko":{"cause":"","description":"DI 기능 중복 할당","solution":"DI 그룹 파라미터를 확인하고, 동일한 기능이 상이한 DI에 할당되어 있는지 확인하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Функция DI назначается повторно","solution":"Проверьте параметры группы DI, чтобы увидеть, не назначена ли одна и та же функция разным DI."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"DI功能重复分配","solution":"检查DI组参数，是否有同一个功能分配在不同的DI上"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Servo command ON is invalid","solution":"Check whether the system parameters are normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"伺服指令ON无效","solution":"检查系统参数是否正常，或联系技术支持工程师"},"id":21574,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"伺服指令ON无效","solution":"检查系统参数是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Product Matching Fault","solution":"Check whether the system parameters are normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"产品匹配故障","solution":"检查系统参数是否正常，或联系技术支持工程师"},"id":28962,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"产品匹配故障","solution":"检查系统参数是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Parameter Storage Fault","solution":"Check whether the system parameters are normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"参数存储故障","solution":"检查系统参数是否正常，或联系技术支持工程师"},"id":21808,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"参数存储故障","solution":"检查系统参数是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Internal Program Exception","solution":"Check whether the system parameters are normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"内部程序异常","solution":"检查系统参数是否正常，或联系技术支持工程师"},"id":25377,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"内部程序异常","solution":"检查系统参数是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Parameter Abnormal Protection","solution":"Check whether the system parameters are normal, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"参数异常保护","solution":"检查系统参数是否正常，或联系技术支持工程师"},"id":25376,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"参数异常保护","solution":"检查系统参数是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überschreitung der DO-Funktionszuweisung","solution":"Prüfen Sie, ob das Kommunikationskabel zuverlässig angeschlossen ist"},"en":{"cause":"","description":"The DO function allocation exceeds the limit","solution":"Check whether communication cables are reliably connected"},"es":{"cause":"","description":"La asignación de la función de DO excede el límite","solution":"Compruebe si los cables de comunicación están conectados de forma fiable"},"fr":{"cause":"","description":"DO功能分配超限","solution":"检查通讯线缆是否可靠连接"},"id":25379,"ja":{"cause":"","description":"DO機能分配制限超過","solution":"通信ケーブルが確実に接続されているかを検査します"},"ko":{"cause":"","description":"DO 기능 할당 한계 초과","solution":"통신 케이블이 안전하게 연결되었는지 확인하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Превышение предела распределения функции DO","solution":"Проверьте надежность подключения кабелей связи."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"DO功能分配超限","solution":"检查通讯线缆是否可靠连接"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Positionsober- und -untergrenzen der Software falsch eingestellt","solution":"Werte 0x607D-01h, 0x607D-02h korrekt einstellen"},"en":{"cause":"","description":"The upper and lower limits of the software location are incorrectly set","solution":"Check whether communication cables are reliably connected"},"es":{"cause":"","description":"Los límites superior e inferior de la ubicación de software se han establecido de forma incorrecta","solution":"Establezca los valores correctos de 0x607D-01h y 0x607D-02h"},"fr":{"cause":"","description":"软件位置上下限设置错误","solution":"正确的设置0x607D-01h，0x607D-02h的值"},"id":25382,"ja":{"cause":"","description":"ソフトウェア位置の上下限設定エラー","solution":"0x607D-01hと0x607D-02hの値を正しく設定します"},"ko":{"cause":"","description":"소프트웨어 위치 상한/하한 설정 오류","solution":"0x607D-01h, 0x607D-02h 값을 정확하게 설정하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неправильно установлены верхняя и нижняя границы расположения ПО","solution":"Установите правильные значения 0x607D-01h и 0x607D-02h."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"软件位置上下限设置错误","solution":"正确的设置0x607D-01h，0x607D-02h的值"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Ursprungversatz falsch eingestellt","solution":"Stellen Sie die Werte von 0x607D-01h, 0x607D-02h korrekt ein und stellen Sie sicher, dass der Ursprungversatzswert 0x607C zwischen den beiden Werten liegt"},"en":{"cause":"","description":"The origin bias setting is incorrect","solution":"Set the values of 0x607D-01h and 0x607D-02h correctly and ensure that the origin offset of 0x607C is between them"},"es":{"cause":"","description":"La configuración de desplazamiento de origen es incorrecta","solution":"Establezca los valores correctos de 0x607D-01h y 0x607D-02h y asegúrese de que el desplazamiento de origen de 0x607C esté entre ellos"},"fr":{"cause":"","description":"原点偏置设置错误","solution":"正确的设置0x607D-01h，0x607D-02h的值，保证原点偏置值0x607C介于二者之间"},"id":25383,"ja":{"cause":"","description":"原点オフセット設定エラー","solution":"0x607D-01hと0x607D-02hの値を正しく設定し、原点オフセット値0x607Cが2つの間にあることを保証します"},"ko":{"cause":"","description":"원점 바이어스 설정 오류","solution":"0x607D-01h, 0x607D-02h 값을 정확하게 설정하고, 원점 바이어스 값 0x607C이 두 값 사이에 있도록 하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неверная настройка смещения начала координат.","solution":"Установите правильные значения 0x607D-01h и 0x607D-02h и убедитесь, что смещение начала координат 0x607C находится между ними."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"原点偏置设置错误","solution":"正确的设置0x607D-01h，0x607D-02h的值，保证原点偏置值0x607C介于二者之间"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überhitzungsschutz für blockierten Motor","solution":"Prüfen Sie, ob die Haltebremse ordnungsgemäß öffnet oder ob der Motor nicht aufgrund eines mechanischen Fehlers blockiert ist"},"en":{"cause":"","description":"Blocking motor overheating protection","solution":"Check whether the lock gate opens normally or whether the motor is stuck due to mechanical failure"},"es":{"cause":"","description":"Bloqueo de protección contra sobrecalentamiento del motor.","solution":"Compruebe si el freno se abre normalmente o si el motor está atascado debido a un fallo mecánico"},"fr":{"cause":"","description":"堵转电机过热保护","solution":"检查抱闸是否正常打开或电机是否由于机械故障被卡住"},"id":28961,"ja":{"cause":"","description":"モータ詰まり過熱保護","solution":"ブレーキが正常に開いているか、あるいはモータが機械故障で詰まっているかを検査します"},"ko":{"cause":"","description":"블로킹 모터 과열 보호","solution":"브레이크 홀딩이 정상적으로 열렸는지 또는 기계적 결함으로 인해 모터에 걸림이 있는지 확인하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Блокировка защиты двигателя от перегрева","solution":"Проверьте, нормально ли отключается тормоз или не заклинил ли двигатель из-за механической неисправности."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"堵转电机过热保护","solution":"检查抱闸是否正常打开或电机是否由于机械故障被卡住"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Überlastungsschutz des Motors","solution":"Prüfen Sie, ob die Endlast des Roboters die Nennlast des Roboters nicht überschreitet, oder wenden Sie sich an den zuständigen Techniker, um den Motor auszutauschen."},"en":{"cause":"","description":"Motor is in overload status","solution":"Check whether the end load of the robot exceeds the nominal load of the robot or contact the relevant technical personnel to replace the motor"},"es":{"cause":"","description":"El motor está en estado de sobrecarga","solution":"Compruebe si la carga de extremo del robot excede la carga nominal del robot o comuníquese con el personal técnico correspondiente para reemplazar el motor"},"fr":{"cause":"","description":"电机过载保护","solution":"检查机器人末端负载是否超过机器人标称负载或联系相关技术人员更换电机"},"id":29056,"ja":{"cause":"","description":"モータ過負荷保護","solution":"ロボットのツール負荷がロボットの定格負荷を超過しているかを検査する、あるいは関連の技術スタッフに連絡してモータを交換します"},"ko":{"cause":"","description":"모터 과부하 보호","solution":"로봇의 끝단 부하가 공칭하중을 초과하는지 확인하거나 관련 기술자에게 문의하여 모터를 교체하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Перегрузка двигателя","solution":"Проверьте, превышает ли конечная нагрузка на робота номинальную нагрузку, или обратитесь к соответствующему техническому персоналу для замены двигателя."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"电机过载保护","solution":"检查机器人末端负载是否超过机器人标称负载或联系相关技术人员更换电机"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz vor Unterbrechung der Encoder-Kommunikation bei abnormalen Bedingungen","solution":"Überprüfen Sie die Verdrahtung des Encoders oder tauschen Sie den Encoder aus."},"en":{"cause":"","description":"Encoder communication is abnormal","solution":"Check the encoder connection or replace the maintenance encoder"},"es":{"cause":"","description":"La comunicación del codificador es anómala","solution":"Compruebe la conexión del codificador o reemplace el codificador de mantenimiento"},"fr":{"cause":"","description":"编码器通信断线异常保护","solution":"检查编码器接线或更换维修编码器"},"id":29568,"ja":{"cause":"","description":"エンコーダ通信遮断異常保護","solution":"エンコーダの接続を検査するか、エンコーダを交換修理します"},"ko":{"cause":"","description":"인코더 통신 끊김 이상 보호","solution":"인코더 배선을 확인하거나 인코더를 교체 또는 보수하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Неполадки связи с устройством кодирования","solution":"Проверьте подключение устройства кодирования или замените его."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"编码器通信断线异常保护","solution":"检查编码器接线或更换维修编码器"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Encoder n.i.O.","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Encoder is abnormal","solution":"Check whether the hardware is working properly, or contact technical support engineer"},"es":{"cause":"","description":"El codificador es anómalo","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"编码器异常故障","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":29569,"ja":{"cause":"","description":"エンコーダ異常故障","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"인코더 이상 오류","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Ненормальная работа устройства кодирования","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"编码器异常故障","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Batterieschutz des Encoders n.i.O.","solution":"Wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Encoder battery is abnormal","solution":"Please contact technical support engineer"},"es":{"cause":"","description":"La batería del codificador es anómala","solution":"Comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"编码器电池异常保护","solution":"请联系技术支持工程师"},"id":29570,"ja":{"cause":"","description":"エンコーダ電池異常保護","solution":"テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"인코더 배터리 이상 보호","solution":"기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неисправность батареи устройства кодирования","solution":"Свяжитесь с инженером технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"编码器电池异常保护","solution":"请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Anomalie der Stromversorgung der Encoder-Batterie","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Encoder battery power supply abnormality","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"Suministro anormal de energía de la batería del codificador","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"Anomalie d'alimentation par batterie de l'encodeur","solution":"Erreur système, veuillez contacter l'Ingénieur du support technique"},"id":29571,"ja":{"cause":"","description":"エンコーダ電池の給電異常","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"인코더 배터리 예외","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Аномальное питание батареи кодера","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"编码器电池供电异常","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"CRC-Prüfsummenfehler des Hauptencoders","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Encoder CRC check error","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"Error de verificación de CRC del codificador principal","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"主编码器CRC校验错误","solution":"系统错误，请联系技术支持工程师"},"id":29572,"ja":{"cause":"","description":"メインエンコーダCRC校正エラー","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"메인 인코더 CRC 검증 오류","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Ошибка CRC-проверки главного устройства кодирования","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"主编码器CRC校验错误","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Trennungsfehler im Hilfsencoder (Drahtbruch)","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Auxiliary Encoder is disconnected","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"El codificador auxiliar está desconectado","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"辅助编码器断线错误","solution":"系统错误，请联系技术支持工程师"},"id":29573,"ja":{"cause":"","description":"補助エンコーダ断線エラー","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"보조 인코더 끊김 오류","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Вспомогательное устройство кодирования отключено.","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"辅助编码器断线错误","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Interner Fehler im Hilfsencoder","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Auxiliary Encoder internal error","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"Error interno del codificador auxiliar","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"辅助编码器内部错误","solution":"系统错误，请联系技术支持工程师"},"id":29574,"ja":{"cause":"","description":"補助エンコーダ内部エラー","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"보조 인코더 내부 오류","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Внутренняя ошибка вспомогательного устройства кодирования","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"辅助编码器内部错误","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"CRC-Prüfsummenfehler des Hilfsencoders","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Auxiliary Encoder CRC check error","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"Error de verificación de CRC del codificador auxiliar","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"辅助编码器CRC校验错误","solution":"系统错误，请联系技术支持工程师"},"id":29575,"ja":{"cause":"","description":"補助エンコーダCRC校正エラー","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"보조 인코더 CRC 검증 오류","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Ошибка CRC-проверки вспомогательного устройства кодирования","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"辅助编码器CRC校验错误","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Ausnahme im Pwm-Ausgangspuffer","solution":"Austausch des Treibers"},"en":{"cause":"","description":"The pwm output buffer is abnormal","solution":"Replace driver"},"es":{"cause":"","description":"El búfer de salida de pwm es anómalo","solution":"Reemplace el controlador"},"fr":{"cause":"","description":"pwm输出buffer异常","solution":"更换驱动器"},"id":29576,"ja":{"cause":"","description":"pwm出力buffer異常","solution":"ドライバを交換"},"ko":{"cause":"","description":"pwm buffer 출력 이상","solution":"드라이버 교체"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Выходной буфер ШИМ неисправен","solution":"Замените привод"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"pwm输出buffer异常","solution":"更换驱动器"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Bremsenleistung n.i.O.","solution":"Prüfen Sie, ob die Bremse angeschlossen oder beschädigt ist"},"en":{"cause":"","description":"The lock power supply is abnormal","solution":"Check whether the lock is connected or damaged"},"es":{"cause":"","description":"La fuente de alimentación del freno es anómala","solution":"Compruebe si el freno está conectado o dañado"},"fr":{"cause":"","description":"抱闸电源异常","solution":"检查抱闸是否连接或是否损坏"},"id":29577,"ja":{"cause":"","description":"ブレーキ電源異常","solution":"ブレーキが接続されているか、あるいは損傷しているかを検査します"},"ko":{"cause":"","description":"브레이크 홀딩 전원 이상","solution":"브레이크 홀딩 연결 여부 또는 손상 여부를 확인하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неисправность питания тормозов","solution":"Проверьте, подключен ли тормоз и не поврежден ли он"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"抱闸电源异常","solution":"检查抱闸是否连接或是否损坏"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Große Positionsabweichung des Gelenks","solution":"1. Produktionsparameter überprüfen  2. Encoder-Installation überprüfen  3. Übertragungsstruktur überprüfen"},"en":{"cause":"","description":"Large deviation of joint position","solution":"1. Check production parameters; 2. Check encoder installation; 3. Check transmission structure"},"es":{"cause":"","description":"Gran desviación en la posición de la articulación.","solution":"1. Verificar los parámetros de producción  2. Verificar la instalación del codificador  3. Verificar la estructura de transmisión"},"fr":{"cause":"","description":"","solution":""},"id":29584,"ja":{"cause":"","description":"関節位置の大きなずれ","solution":"1. 製造パラメータを確認する  2. エンコーダの設置を確認する  3. 伝送構造を確認する"},"ko":{"cause":"","description":"조인트 위치의 편차가 큼","solution":"1. 생산 매개변수 확인  2. 엔코더 설치 확인  3. 드라이브 구조 확인"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Большое отклонение в положении шарнира","solution":"1. Проверьте производственные параметры  2. Проверьте установку энкодера  3. Проверьте структуру передачи"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"关节位置偏差大","solution":"1.检查生产参数 2.检查编码器安装 3.检查传动结构"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Servobus-Kommunikation ist abnormal","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Servo bus communication is abnormal","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"La comunicación del bus servo es anómala","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"Communication du bus servo anormale","solution":"Erreur système, veuillez contacter un ingénieur du support technique"},"id":30080,"ja":{"cause":"","description":"サーボバス通信異常","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"서보 버스 통신 이상","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"서보 버스 통신 이상","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"level":5,"ru":{"cause":"","description":"Ненормальная связь сервошины","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"Giao tiếp bus servo không bình thường","solution":"Lỗi hệ thống, vui lòng liên hệ với kỹ sư hỗ trợ kỹ thuật"},"zh_CN":{"cause":"","description":"伺服总线通讯异常","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"伺服總線通訊異常","solution":"系統錯誤，請聯繫技術支持工程師"}},{"de":{"cause":"","description":"XML-Konfigurationsdatei nicht gebrannt","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"The XML configuration file was not burned","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"El archivo de configuración XML no se ha grabado","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"未烧录XML配置文件","solution":"系统错误，请联系技术支持工程师"},"id":30081,"ja":{"cause":"","description":"XML設定ファイルが書き込まれていません","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"XML 설정 파일을 굽지 않음","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Файл конфигурации XML не был записан.","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"未烧录XML配置文件","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Falsche Konfiguration der Synchronisationsperiode","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"The synchronization period is incorrectly configured","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"El periodo de sincronización se ha configurado de forma incorrecta","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"同步周期配置错误","solution":"系统错误，请联系技术支持工程师"},"id":30082,"ja":{"cause":"","description":"同期サイクル設定エラー","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"주기 동기화 설정 오류","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Неправильно настроен период синхронизации","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"同步周期配置错误","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Master-Synchronisationssignal während der Synchronisationskommunikation verloren","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"During synchronous communication, the synchronization signal of the master station is lost","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"Durante la comunicación síncrona, se ha perdido la señal de sincronización de la estación maestra","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"同步通信时，主站同步信号丢失","solution":"系统错误，请联系技术支持工程师"},"id":30083,"ja":{"cause":"","description":"同期通信時にマスター同期信号が失われた","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"통신 동기화 시, 일차국 동기화 신호 손실","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"При синхронной связи теряется сигнал синхронизации ведущей станции.","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"同步通信时，主站同步信号丢失","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Synchronisationszyklusfehler zu groß","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"The synchronization period error is too large","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"El error del periodo de sincronización es demasiado grande","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"同步周期误差过大","solution":"系统错误，请联系技术支持工程师"},"id":30084,"ja":{"cause":"","description":"同期サイクル誤差が過大","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"주기 동기화 오차가 지나치게 큼","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Ошибка периода синхронизации слишком велика","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"同步周期误差过大","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz vor Überschreitung der maximalen Drehzahl","solution":"Prüfen Sie, ob die Motordrahtfolge richtig angeschlossen ist."},"en":{"cause":"","description":"Output speed is higher than the expected speed","solution":"Check whether the linear connection of the motor is normal"},"es":{"cause":"","description":"La velocidad de salida es mayor que la velocidad esperada","solution":"Compruebe si la conexión lineal del motor es normal"},"fr":{"cause":"","description":"超过最大转速保护","solution":"检测电机线序连接是否正常"},"id":33920,"ja":{"cause":"","description":"最大回転数超過保護","solution":"モータ配線接続が正常であるかを検査します"},"ko":{"cause":"","description":"최대 회전 속도 초과 보호","solution":"모터 배선 순서가 정상적으로 연결되었는지 확인하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Выходная скорость выше ожидаемой скорости","solution":"Проверьте, нормально ли линейное соединение двигателя."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"超过最大转速保护","solution":"检测电机线序连接是否正常"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz vor übermäßiger Drehzahlabweichung","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, und starten Sie es erneut, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Difference between the set speed and current speed exceeds the range","solution":"Check whether the hardware is working properly, restart the controller, or contact technical support engineer"},"es":{"cause":"","description":"La diferencia entre la velocidad establecida y la velocidad actual excede el rango","solution":"Compruebe si el hardware funciona correctamente y reinicie el controlador, o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"速度偏差过大保护","solution":"检查硬件是否正常并重新启动，或联系技术支持工程师"},"id":33921,"ja":{"cause":"","description":"速度偏差過大保護","solution":"ハードが正常であるかを確認し、再起動するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"속도 편차 과대 보호","solution":"하드웨어가 정상인지 확인하고 리부팅하거나 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Разница между заданной скоростью и текущей скоростью выходит за пределы допустимого диапазона","solution":"Проверьте правильность работы оборудования и перезагрузите контроллер или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"速度偏差过大保护","solution":"检查硬件是否正常并重新启动，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Bus Overcurrent","solution":"Check whether the hardware is normal and restart, or contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"母线过流","solution":"检查硬件是否正常并重新启动，或联系技术支持工程师"},"id":8980,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"母线过流","solution":"检查硬件是否正常并重新启动，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Motorschutz für Überziehgeschwindigkeit","solution":"Prüfen Sie, ob der Motorwinkel i.O. ist oder ob der Motor beschädigt ist"},"en":{"cause":"","description":"Motor is stalled ","solution":"Check whether the electrical Angle is normal or whether the motor is damaged"},"es":{"cause":"","description":"El motor se ha calado","solution":"Compruebe si el ángulo eléctrico es normal o si el motor está dañado"},"fr":{"cause":"","description":"电机失速保护","solution":"检查电机电角度是否正常或电机是否损坏"},"id":33922,"ja":{"cause":"","description":"モータ失速保護","solution":"モータ電気角度が正常である、あるいはモータが損傷しているかを検査します"},"ko":{"cause":"","description":"모터 스톨 보호","solution":"모터 전기 각도 정상 여부 또는 모터 손상 여부를 확인하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Нештатная остановка двигателя","solution":"Проверьте, нормальный ли электрический угол и не поврежден ли двигатель."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"电机失速保护","solution":"检查电机电角度是否正常或电机是否损坏"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz vor übermäßiger Positionsabweichung","solution":"Systemfehler, bitte wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Difference between the set positon and current position exceeds the range","solution":"System error, please contact technical support engineer"},"es":{"cause":"","description":"La diferencia entre la posición establecida y la posición actual excede el rango","solution":"Error del sistema. Comuníquese con los ingenieros de soporte técnico"},"fr":{"cause":"","description":"位置偏差过大保护","solution":"系统错误，请联系技术支持工程师"},"id":34321,"ja":{"cause":"","description":"位置偏差過大保護","solution":"システムエラー。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"위치 편차 과대 보호","solution":"시스템 오류가 발생했습니다. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Разница между заданным и текущим положением выходит за пределы допустимого диапазона","solution":"Системная ошибка. Свяжитесь с инженерами технической поддержки"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"位置偏差过大保护","solution":"系统错误，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Encoder Multi-turn Count Error","solution":"Encoder malfunction, please contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"编码器多圈计数错误","solution":"编码器故障，请联系技术支持工程师"},"id":29490,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"编码器多圈计数错误","solution":"编码器故障，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Encoder Multi-turn Count Overflow","solution":"Encoder malfunction, please contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"编码器多圈计数溢出","solution":"编码器故障，请联系技术支持工程师"},"id":29491,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"编码器多圈计数溢出","solution":"编码器故障，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"","solution":""},"en":{"cause":"","description":"Encoder Data Abnormal","solution":"Encoder malfunction, please contact the technical support engineer"},"es":{"cause":"","description":"","solution":""},"fr":{"cause":"","description":"编码器数据异常","solution":"编码器故障，请联系技术支持工程师"},"id":29494,"ja":{"cause":"","description":"","solution":""},"ko":{"cause":"","description":"","solution":""},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"","solution":""},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"编码器数据异常","solution":"编码器故障，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Schutz vor Überschreitung der Positionsvorgabe","solution":"Bitte geben Sie die richtigen Parameter ein"},"en":{"cause":"","description":"Postion is out of range","solution":"Enter the correct parameters"},"es":{"cause":"","description":"La posición está fuera de rango","solution":"Introduzca los parámetros correctos"},"fr":{"cause":"","description":"位置给定超限保护","solution":"请输入正确参数"},"id":34322,"ja":{"cause":"","description":"位置指令制限超過保護","solution":"正しいパラメータを入力してください"},"ko":{"cause":"","description":"위치 지정 한계 초과 보호","solution":"정확한 파라미터를 입력하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Позиция вне диапазона","solution":"Введите правильные параметры"},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"位置给定超限保护","solution":"请输入正确参数"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Übermäßige Positionsabweichung von vollständig geschlossenen Schleifen","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"The full closed-loop position deviation is too large","solution":"Check whether the hardware is working properly, restart the controller, or contact technical support engineer"},"es":{"cause":"","description":"La desviación de posición de bucle cerrado total es demasiado grande","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"全闭环位置偏差过大","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":34323,"ja":{"cause":"","description":"全閉ループの位置偏差過大","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"전체 폐쇄 루프 위치 편차 과대","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Полное отклонение положения замкнутого контура слишком велико.","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"全闭环位置偏差过大","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Fehler bei der Winkelerkennung","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Angle recognition failure","solution":"Check whether the hardware is working properly, restart the controller, or contact technical support engineer"},"es":{"cause":"","description":"Fallo de identificación del ángulo","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"角度辨识失败","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":65282,"ja":{"cause":"","description":"角度識別に失敗","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"각도 인식 실패","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":5,"ru":{"cause":"","description":"Ошибка идентификации угла","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"角度辨识失败","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Fehler bei der Parametererkennung","solution":"Prüfen Sie, ob die Hardware in Ordnung ist, oder wenden Sie sich an einen Ingenieur des technischen Kundendienstes."},"en":{"cause":"","description":"Parameter identification failure","solution":"Check whether the hardware is working properly, restart the controller, or contact technical support engineer"},"es":{"cause":"","description":"Fallo de identificación del parámetro","solution":"Compruebe si el hardware funciona correctamente o comuníquese con el ingeniero de soporte técnico"},"fr":{"cause":"","description":"参数辨识失败","solution":"检查硬件是否正常，或联系技术支持工程师"},"id":65344,"ja":{"cause":"","description":"パラメータ識別に失敗","solution":"ハードが正常であるかを確認するか、テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"파라미터 인식 실패","solution":"하드웨어가 정상인지 확인하거나, 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"","solution":""},"level":1,"ru":{"cause":"","description":"Ошибка идентификации параметра","solution":"Проверьте правильность работы оборудования или обратитесь к инженеру технической поддержки."},"vi":{"cause":"","description":"","solution":""},"zh_CN":{"cause":"","description":"参数辨识失败","solution":"检查硬件是否正常，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"","solution":""}},{"de":{"cause":"","description":"Warnung für Servomotor","solution":"Warnung für Servomotor. Bitte kontaktieren Sie den technischen Support."},"en":{"cause":"","description":"Servo motor warning","solution":"Servo motor warning. Please contact technical support."},"es":{"cause":"","description":"Advertencia de motor servo","solution":"Advertencia de motor servo. Póngase en contacto con el soporte técnico."},"fr":{"cause":"","description":"Avertissement de motor servo","solution":"Avertissement de motor servo. Veuillez contacter le support technique."},"id":1536,"ja":{"cause":"","description":"サーボモーター警告","solution":"サーボモーター警告。テクニカルサポートエンジニアに連絡してください"},"ko":{"cause":"","description":"서보 모터 경고","solution":"서보 모터 경고. 기술 지원 엔지니어에게 문의하십시오"},"kr":{"cause":"","description":"서보 모터 경고","solution":""},"level":5,"ru":{"cause":"","description":"Предупреждение о сервомоторе","solution":"Предупреждение о сервомоторе. Свяжитесь с инженером технической поддержки."},"vi":{"cause":"","description":"Cảnh báo động cơ servo","solution":""},"zh_CN":{"cause":"","description":"伺服电机警告","solution":"伺服电机警告，请联系技术支持工程师"},"zh_hant":{"cause":"","description":"伺服電機警告","solution":""}}]
+
+GET /properties/alarmsController HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 32666
+
+[{"de":{"cause":"","description":"Selbsttest beim Einschalten, Modellzuordnungsfehler","solution":"Überprüfen Sie, ob die Hardwareverbindung normal ist. Versuchen Sie gegebenenfalls einen Neustart oder wenden Sie sich an den technischen Support."},"en":{"cause":"","description":"Boot self-check failed: model mismatch","solution":"Check whether the hardware connection is normal. You may try restarting or contact technical support engineers."},"es":{"cause":"","description":"Autocomprobación al encender, error de coincidencia de modelo","solution":"Verifique si la conexión del hardware es normal. Puede intentar reiniciar o contactar con el soporte técnico."},"fr":{"cause":"","description":"Auto-test au démarrage, anomalie d’adéquation du modèle","solution":"Vérifiez si la connexion du matériel est normale. Vous pouvez essayer de redémarrer ou contacter un ingénieur du support technique."},"id":1,"ja":{"cause":"","description":"起動セルフチェック、機種不一致異常","solution":"ハードウェアの接続が正常か確認し、再起動を試すか、技術サポートエンジニアに連絡してください。"},"ko":{"cause":"","description":"부팅 자체 검사, 기종 매칭 이상","solution":"하드웨어 연결이 정상인지 확인하고, 재부팅을 시도하거나 기술 지원 엔지니어에게 문의하십시오."},"kr":{"cause":"","description":"부팅 자체 검사, 기종 매칭 이상","solution":"하드웨어 연결이 정상인지 확인하고, 재부팅을 시도하거나 기술 지원 엔지니어에게 문의하십시오."},"level":1,"ru":{"cause":"","description":"Самопроверка при включении, ошибка соответствия модели","solution":"Проверьте, исправно ли подключено оборудование. Попробуйте перезагрузить устройство или обратитесь в службу технической поддержки."},"vi":{"cause":"","description":"Tự kiểm tra khi khởi động, lỗi không khớp kiểu máy","solution":"Kiểm tra xem kết nối phần cứng có bình thường không. Có thể thử khởi động lại hoặc liên hệ kỹ sư hỗ trợ kỹ thuật."},"zh_CN":{"cause":"","description":"开机自检，机型匹配异常","solution":"检查硬件连接是否正常，可尝试重启解决或联系技术支持工程师"},"zh_hant":{"cause":"","description":"開機自檢，機型匹配異常","solution":"檢查硬體連接是否正常，可嘗試重新啟動或聯繫技術支援工程師"}},{"de":{"cause":"","description":"Selbsttest beim Einschalten: Paketverlust über 1 %, Kommunikationsqualität schlecht","solution":"Führen Sie ein OTA-Update durch, versuchen Sie einen Neustart oder wenden Sie sich an den technischen Support."},"en":{"cause":"","description":"Boot self-check: packet loss rate exceeds 1%, communication quality is poor","solution":"You may perform an OTA upgrade, try restarting the device, or contact technical support engineers."},"es":{"cause":"","description":"Autocomprobación al encender: la tasa de pérdida de paquetes supera el 1 %, la calidad de comunicación es deficiente","solution":"Puede realizar una actualización OTA, intentar reiniciar o contactar con el soporte técnico."},"fr":{"cause":"","description":"Auto-test au démarrage : taux de perte de paquets supérieur à 1 %, qualité de communication médiocre","solution":"Effectuez une mise à jour OTA, essayez de redémarrer ou contactez un ingénieur du support technique."},"id":2,"ja":{"cause":"","description":"起動セルフチェック：パケット損失率が1％を超え、通信品質が低下しています","solution":"OTA アップグレードを実行するか、再起動を試すか、技術サポートエンジニアに連絡してください。"},"ko":{"cause":"","description":"부팅 자체 검사: 패킷 손실률이 1%를 초과하여 통신 품질이 좋지 않음","solution":"OTA 업그레이드를 진행하거나, 재부팅을 시도하거나, 기술 지원 엔지니어에게 문의하십시오."},"kr":{"cause":"","description":"부팅 자체 검사: 패킷 손실률이 1%를 초과하여 통신 품질이 좋지 않음","solution":"OTA 업그레이드를 진행하거나, 재부팅을 시도하거나, 기술 지원 엔지니어에게 문의하십시오."},"level":1,"ru":{"cause":"","description":"Самопроверка при включении: потеря пакетов превышает 1 %, качество связи плохое","solution":"Выполните обновление OTA, попробуйте перезагрузить устройство или обратитесь в службу технической поддержки."},"vi":{"cause":"","description":"Tự kiểm tra khi khởi động: tỷ lệ mất gói vượt quá 1%, chất lượng truyền thông kém","solution":"Có thể thực hiện nâng cấp OTA, thử khởi động lại hoặc liên hệ kỹ sư hỗ trợ kỹ thuật."},"zh_CN":{"cause":"","description":"开机自检，丢包率超过1%，通讯质量较差","solution":"可进行OTA升级设备，或可尝试重启解决，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"開機自檢，丟包率超過1%，通訊品質較差","solution":"可進行 OTA 升級設備，或嘗試重新啟動，或聯繫技術支援工程師"}},{"de":{"cause":"","description":"BMS-Batteriepack-ID-Fehler","solution":"Überprüfen Sie die BMS-Batteriepack-Verbindung und die ID-Konfiguration oder wenden Sie sich an den technischen Support."},"en":{"cause":"","description":"BMS battery pack ID error","solution":"Check the BMS battery pack connection and ID configuration, or contact technical support engineers."},"es":{"cause":"","description":"Error de ID del paquete de batería BMS","solution":"Verifique la conexión del paquete de batería BMS y la configuración del ID, o contacte con el soporte técnico."},"fr":{"cause":"","description":"Erreur d'ID du bloc de batterie BMS","solution":"Vérifiez la connexion du bloc de batterie BMS et la configuration de l'ID, ou contactez un ingénieur du support technique."},"id":3,"ja":{"cause":"","description":"BMSバッテリーパックIDエラー","solution":"BMSバッテリーパックの接続とID設定を確認するか、技術サポートエンジニアに連絡してください。"},"ko":{"cause":"","description":"BMS 배터리 팩 ID 오류","solution":"BMS 배터리 팩 연결 및 ID 구성을 확인하거나 기술 지원 엔지니어에게 문의하십시오."},"kr":{"cause":"","description":"BMS 배터리 팩 ID 오류","solution":"BMS 배터리 팩 연결 및 ID 구성을 확인하거나 기술 지원 엔지니어에게 문의하십시오."},"level":1,"ru":{"cause":"","description":"Ошибка ID блока батарей BMS","solution":"Проверьте подключение блока батарей BMS и конфигурацию ID или обратитесь в службу технической поддержки."},"vi":{"cause":"","description":"Lỗi ID bộ pin BMS","solution":"Kiểm tra kết nối bộ pin BMS và cấu hình ID, hoặc liên hệ kỹ sư hỗ trợ kỹ thuật."},"zh_CN":{"cause":"","description":"bms电池组id错误","solution":"检查BMS电池组连接和ID配置，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"bms電池組id錯誤","solution":"檢查BMS電池組連接和ID配置，或聯繫技術支援工程師"}},{"de":{"cause":"","description":"4G-Modul-Ausnahme","solution":"Überprüfen Sie die 4G-Modulverbindung, den SIM-Kartenstatus, das Netzwerksignal oder wenden Sie sich an den technischen Support."},"en":{"cause":"","description":"4G module exception","solution":"Check the 4G module connection, SIM card status, network signal, or contact technical support engineers."},"es":{"cause":"","description":"Excepción del módulo 4G","solution":"Verifique la conexión del módulo 4G, el estado de la tarjeta SIM, la señal de red o contacte con el soporte técnico."},"fr":{"cause":"","description":"Exception du module 4G","solution":"Vérifiez la connexion du module 4G, l'état de la carte SIM, le signal réseau ou contactez un ingénieur du support technique."},"id":4,"ja":{"cause":"","description":"4Gモジュール異常","solution":"4Gモジュールの接続、SIMカードの状態、ネットワーク信号を確認するか、技術サポートエンジニアに連絡してください。"},"ko":{"cause":"","description":"4G 모듈 이상","solution":"4G 모듈 연결, SIM 카드 상태, 네트워크 신호를 확인하거나 기술 지원 엔지니어에게 문의하십시오."},"kr":{"cause":"","description":"4G 모듈 이상","solution":"4G 모듈 연결, SIM 카드 상태, 네트워크 신호를 확인하거나 기술 지원 엔지니어에게 문의하십시오."},"level":1,"ru":{"cause":"","description":"Исключение модуля 4G","solution":"Проверьте подключение модуля 4G, состояние SIM-карты, сигнал сети или обратитесь в службу технической поддержки."},"vi":{"cause":"","description":"Lỗi module 4G","solution":"Kiểm tra kết nối module 4G, trạng thái thẻ SIM, tín hiệu mạng hoặc liên hệ kỹ sư hỗ trợ kỹ thuật."},"zh_CN":{"cause":"","description":"4g模块异常","solution":"检查4G模块连接、SIM卡状态、网络信号，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"4g模組異常","solution":"檢查4G模組連接、SIM卡狀態、網路信號，或聯繫技術支援工程師"}},{"de":{"cause":"","description":"4G-Modul nicht erkannt","solution":"Technischen Support kontaktieren."},"en":{"cause":"","description":"4G module not found","solution":"Check the 4G module hardware connection, or contact technical support engineers."},"es":{"cause":"","description":"Módulo 4G no reconocido","solution":"Contacte con el soporte técnico."},"fr":{"cause":"","description":"Module 4G non reconnu","solution":"Contactez un ingénieur du support technique."},"id":5,"ja":{"cause":"","description":"4Gモジュールが認識できません","solution":"技術サポートエンジニアに連絡してください。"},"ko":{"cause":"","description":"4G 모듈을 인식할 수 없음","solution":"기술 지원 엔지니어에게 문의하십시오."},"kr":{"cause":"","description":"4G 모듈을 인식할 수 없음","solution":"기술 지원 엔지니어에게 문의하십시오."},"level":1,"ru":{"cause":"","description":"Модуль 4G не распознан","solution":"Службу технической поддержки обратиться."},"vi":{"cause":"","description":"Không nhận diện được module 4G","solution":"Kỹ sư hỗ trợ kỹ thuật liên hệ."},"zh_CN":{"cause":"","description":"未识别到4G模块","solution":"请联系技术支持工程师"},"zh_hant":{"cause":"","description":"未識別到4G模組","solution":"聯繫技術支援工程師"}},{"de":{"cause":"","description":"snCode.json Parsing fehlgeschlagen","solution":"SN-Code-Datei-Anomalie. Technischen Support kontaktieren"},"en":{"cause":"","description":"snCode.json parsing failed","solution":"SN code file anomaly. Contact technical support"},"es":{"cause":"","description":"Error al analizar snCode.json","solution":"Anomalía del archivo de código SN. Contacte con soporte técnico"},"fr":{"cause":"","description":"Échec de l'analyse de snCode.json","solution":"Anomalie du fichier de code SN. Contacter le support technique"},"id":6,"ja":{"cause":"","description":"snCode.jsonファイル解析失敗","solution":"SNコードファイル異常。技術サポートに連絡してください"},"ko":{"cause":"","description":"snCode.json 파일 파싱 실패","solution":"SN 코드 파일 이상. 기술 지원에 문의하십시오"},"kr":{"cause":"","description":"snCode.json 파일 파싱 실패","solution":"SN 코드 파일 이상. 기술 지원에 문의하십시오"},"level":1,"ru":{"cause":"","description":"Ошибка парсинга snCode.json","solution":"Аномалия файла SN-кода. Обратитесь в службу технической поддержки"},"vi":{"cause":"","description":"Phân tích snCode.json thất bại","solution":"File mã SN bất thường. Liên hệ hỗ trợ kỹ thuật"},"zh_CN":{"cause":"","description":"snCode.json文件解析失败","solution":"SN码文件异常，联系技术支持工程师"},"zh_hant":{"cause":"","description":"snCode.json檔案解析失敗","solution":"SN碼檔案異常，聯繫技術支援工程師"}},{"de":{"cause":"","description":"Audiogerät-Ausnahme","solution":"Überprüfen Sie die Audiogerät-Verbindung und -Konfiguration oder wenden Sie sich an den technischen Support."},"en":{"cause":"","description":"Audio device exception","solution":"Check the audio device connection and configuration, or contact technical support engineers."},"es":{"cause":"","description":"Excepción del dispositivo de audio","solution":"Verifique la conexión y configuración del dispositivo de audio, o contacte con el soporte técnico."},"fr":{"cause":"","description":"Exception du dispositif audio","solution":"Vérifiez la connexion et la configuration du dispositif audio, ou contactez un ingénieur du support technique."},"id":7,"ja":{"cause":"","description":"オーディオデバイス異常","solution":"オーディオデバイスの接続と設定を確認するか、技術サポートエンジニアに連絡してください。"},"ko":{"cause":"","description":"오디오 장치 이상","solution":"오디오 장치 연결 및 구성을 확인하거나 기술 지원 엔지니어에게 문의하십시오."},"kr":{"cause":"","description":"오디오 장치 이상","solution":"오디오 장치 연결 및 구성을 확인하거나 기술 지원 엔지니어에게 문의하십시오."},"level":1,"ru":{"cause":"","description":"Исключение аудиоустройства","solution":"Проверьте подключение и конфигурацию аудиоустройства или обратитесь в службу технической поддержки."},"vi":{"cause":"","description":"Lỗi thiết bị âm thanh","solution":"Kiểm tra kết nối và cấu hình thiết bị âm thanh, hoặc liên hệ kỹ sư hỗ trợ kỹ thuật."},"zh_CN":{"cause":"","description":"音频设备异常","solution":"检查音频设备连接和配置，或联系技术支持工程师"},"zh_hant":{"cause":"","description":"音頻設備異常","solution":"檢查音頻設備連接和配置，或聯繫技術支援工程師"}},{"en":{"cause":"","description":"Cell overvoltage","solution":"Check battery cell status or contact technical support."},"id":8,"level":1,"zh_CN":{"cause":"","description":"电芯过压","solution":"检查电芯状态或联系技术支持工程师"}},{"en":{"cause":"","description":"Cell undervoltage","solution":"Charge the battery or contact technical support."},"id":9,"level":1,"zh_CN":{"cause":"","description":"电芯欠压","solution":"对电池充电或联系技术支持工程师"}},{"en":{"cause":"","description":"Cell failure/dead","solution":"Replace battery or contact technical support."},"id":10,"level":1,"zh_CN":{"cause":"","description":"电芯失效/死值","solution":"更换电池或联系技术支持工程师"}},{"en":{"cause":"","description":"Cell voltage mismatch","solution":"Check battery balance or contact technical support."},"id":11,"level":1,"zh_CN":{"cause":"","description":"电芯电压不匹配","solution":"检查电池均衡或联系技术支持工程师"}},{"en":{"cause":"","description":"Battery pack overvoltage","solution":"Check battery pack or contact technical support."},"id":12,"level":1,"zh_CN":{"cause":"","description":"电池包过压","solution":"检查电池包或联系技术支持工程师"}},{"en":{"cause":"","description":"Battery pack undervoltage","solution":"Charge the battery or contact technical support."},"id":13,"level":1,"zh_CN":{"cause":"","description":"电池包欠压","solution":"对电池充电或联系技术支持工程师"}},{"en":{"cause":"","description":"Charging overcurrent","solution":"Check charger or contact technical support."},"id":14,"level":1,"zh_CN":{"cause":"","description":"充电过流","solution":"检查充电器或联系技术支持工程师"}},{"en":{"cause":"","description":"Charging short circuit","solution":"Stop charging and contact technical support."},"id":15,"level":1,"zh_CN":{"cause":"","description":"充电短路","solution":"停止充电并联系技术支持工程师"}},{"en":{"cause":"","description":"Discharge overcurrent","solution":"Reduce load or contact technical support."},"id":16,"level":1,"zh_CN":{"cause":"","description":"放电过流","solution":"降低负载或联系技术支持工程师"}},{"en":{"cause":"","description":"Discharge short circuit","solution":"Check wiring and contact technical support."},"id":17,"level":1,"zh_CN":{"cause":"","description":"放电短路","solution":"检查接线并联系技术支持工程师"}},{"en":{"cause":"","description":"Battery overtemperature","solution":"Cool down the battery or contact technical support."},"id":18,"level":1,"zh_CN":{"cause":"","description":"电池过温","solution":"冷却电池或联系技术支持工程师"}},{"en":{"cause":"","description":"Battery undertemperature","solution":"Warm up the battery or contact technical support."},"id":19,"level":1,"zh_CN":{"cause":"","description":"电池欠温","solution":"加热电池或联系技术支持工程师"}},{"en":{"cause":"","description":"AFE chip overtemperature","solution":"Check BMS cooling or contact technical support."},"id":20,"level":1,"zh_CN":{"cause":"","description":"AFE芯片温度过高","solution":"检查BMS散热或联系技术支持工程师"}},{"en":{"cause":"","description":"PCB overtemperature","solution":"Check BMS cooling or contact technical support."},"id":21,"level":1,"zh_CN":{"cause":"","description":"PCB温度过高","solution":"检查BMS散热或联系技术支持工程师"}},{"en":{"cause":"","description":"Open circuit detected","solution":"Check battery connection or contact technical support."},"id":22,"level":1,"zh_CN":{"cause":"","description":"开路检测","solution":"检查电池连接或联系技术支持工程师"}},{"en":{"cause":"","description":"FET driver fault","solution":"Contact technical support."},"id":23,"level":1,"zh_CN":{"cause":"","description":"FET驱动故障","solution":"联系技术支持工程师"}},{"en":{"cause":"","description":"Chip system error","solution":"Restart or contact technical support."},"id":24,"level":1,"zh_CN":{"cause":"","description":"芯片系统错误","solution":"重启或联系技术支持工程师"}},{"en":{"cause":"","description":"Chip sampling error","solution":"Contact technical support."},"id":25,"level":1,"zh_CN":{"cause":"","description":"芯片采样错误","solution":"联系技术支持工程师"}},{"en":{"cause":"","description":"UWB module not detected","solution":"Connect or install the UWB module, check the USB serial link"},"id":26,"level":0,"zh_CN":{"cause":"","description":"未检测到UWB模块（配置要求具备该硬件）","solution":"请连接或安装UWB模块并检查USB串口链路"}},{"en":{"cause":"","description":"UDP receive buffer is null","solution":"Check UDP data receiving link."},"id":256,"level":1,"zh_CN":{"cause":"","description":"UDP接收缓冲为空","solution":"检查UDP数据接收链路"}},{"en":{"cause":"","description":"UDP payload length too short","solution":"Check UDP packet transmission integrity."},"id":257,"level":1,"zh_CN":{"cause":"","description":"UDP报文长度不足","solution":"检查UDP报文传输完整性"}},{"en":{"cause":"","description":"UDP response send failed","solution":"Check network connection and send status."},"id":258,"level":1,"zh_CN":{"cause":"","description":"UDP回包发送失败","solution":"检查网络连接与发送状态"}},{"en":{"cause":"","description":"UDP payload write overflow","solution":"Check data length and buffer configuration."},"id":259,"level":1,"zh_CN":{"cause":"","description":"UDP回包写越界","solution":"检查数据长度与缓冲区配置"}},{"en":{"cause":"","description":"Protocol frame length invalid","solution":"Check protocol frame header and data length."},"id":264,"level":1,"zh_CN":{"cause":"","description":"协议帧头长度与实际长度不一致","solution":"检查协议帧头与数据长度"}},{"en":{"cause":"","description":"Protocol reserved field non-zero","solution":"Check protocol data format."},"id":265,"level":1,"zh_CN":{"cause":"","description":"协议保留字段非0","solution":"检查协议数据格式"}},{"en":{"cause":"","description":"IMU not ready","solution":"Wait for IMU initialization or check hardware."},"id":272,"level":1,"zh_CN":{"cause":"","description":"IMU未就绪","solution":"等待IMU初始化或检查硬件"}},{"en":{"cause":"","description":"IMU register read failed","solution":"Check IMU communication and wiring."},"id":273,"level":1,"zh_CN":{"cause":"","description":"IMU寄存器读取失败","solution":"检查IMU通信与接线"}},{"en":{"cause":"","description":"IMU attitude fusion exception","solution":"Recalibrate IMU or check sensor status."},"id":274,"level":1,"zh_CN":{"cause":"","description":"IMU姿态融合异常","solution":"重新标定IMU或检查传感器状态"}},{"en":{"cause":"","description":"IMU bias abnormal or uncalibrated","solution":"Perform IMU zero bias calibration."},"id":275,"level":1,"zh_CN":{"cause":"","description":"IMU零偏异常/未标定","solution":"执行IMU零偏标定"}},{"en":{"cause":"","description":"IMU complementary filter init failed","solution":"Restart the device or check IMU driver."},"id":276,"level":1,"zh_CN":{"cause":"","description":"IMU互补滤波器初始化失败","solution":"重启设备或检查IMU驱动"}},{"en":{"cause":"","description":"GPIO or hardware version exception","solution":"Check GPIO configuration and hardware version."},"id":280,"level":1,"zh_CN":{"cause":"","description":"GPIO/硬件版本异常","solution":"检查GPIO配置与硬件版本"}},{"en":{"cause":"","description":"Ethernet link not established","solution":"Check Ethernet cable and connection status."},"id":281,"level":1,"zh_CN":{"cause":"","description":"以太网链路未建立","solution":"检查网线与连接状态"}},{"en":{"cause":"","description":"Power status abnormal","solution":"Check power supply and circuit status."},"id":282,"level":1,"zh_CN":{"cause":"","description":"电源状态异常","solution":"检查电源供电与电路状态"}},{"en":{"cause":"","description":"VBUS pre-charge short circuit","solution":"Check power circuit for short circuit."},"id":283,"level":1,"zh_CN":{"cause":"","description":"VBUS预充检测短路","solution":"检查电源电路是否短路"}},{"en":{"cause":"","description":"VBUS power sequence failed","solution":"Check power sequence control module."},"id":284,"level":1,"zh_CN":{"cause":"","description":"VBUS上电时序失败","solution":"检查上电时序控制模块"}},{"en":{"cause":"","description":"System memory allocation failed","solution":"Check system memory usage."},"id":288,"level":1,"zh_CN":{"cause":"","description":"系统内存分配失败","solution":"检查系统内存使用情况"}},{"en":{"cause":"","description":"Internal assertion failed","solution":"Check program logic or contact technical support."},"id":289,"level":1,"zh_CN":{"cause":"","description":"内部断言失败","solution":"检查程序逻辑或联系技术支持"}},{"en":{"cause":"","description":"FDCAN1 bus-off error","solution":"Check CAN bus wiring and termination."},"id":296,"level":1,"zh_CN":{"cause":"","description":"FDCAN1总线关闭","solution":"检查CAN总线接线与终端电阻"}},{"en":{"cause":"","description":"FDCAN2 bus-off error","solution":"Check CAN bus wiring and termination."},"id":297,"level":1,"zh_CN":{"cause":"","description":"FDCAN2总线关闭","solution":"检查CAN总线接线与终端电阻"}},{"en":{"cause":"","description":"FDCAN3 bus-off error","solution":"Check CAN bus wiring and termination."},"id":298,"level":1,"zh_CN":{"cause":"","description":"FDCAN3总线关闭","solution":"检查CAN总线接线与终端电阻"}},{"en":{"cause":"","description":"FDCAN4 bus-off error","solution":"Check CAN bus wiring and termination."},"id":299,"level":1,"zh_CN":{"cause":"","description":"FDCAN4总线关闭","solution":"检查CAN总线接线与终端电阻"}},{"en":{"cause":"","description":"FDCAN5 bus-off error","solution":"Check CAN bus wiring and termination."},"id":300,"level":1,"zh_CN":{"cause":"","description":"FDCAN5总线关闭","solution":"检查CAN总线接线与终端电阻"}},{"en":{"cause":"","description":"FDCAN6 bus-off error","solution":"Check CAN bus wiring and termination."},"id":301,"level":1,"zh_CN":{"cause":"","description":"FDCAN6总线关闭","solution":"检查CAN总线接线与终端电阻"}},{"en":{"cause":"","description":"FDCAN1 sync send failed","solution":"Check CAN bus load and communication status."},"id":304,"level":1,"zh_CN":{"cause":"","description":"FDCAN1同步发送失败","solution":"检查CAN总线负载与通信状态"}},{"en":{"cause":"","description":"FDCAN2 sync send failed","solution":"Check CAN bus load and communication status."},"id":305,"level":1,"zh_CN":{"cause":"","description":"FDCAN2同步发送失败","solution":"检查CAN总线负载与通信状态"}},{"en":{"cause":"","description":"FDCAN3 sync send failed","solution":"Check CAN bus load and communication status."},"id":306,"level":1,"zh_CN":{"cause":"","description":"FDCAN3同步发送失败","solution":"检查CAN总线负载与通信状态"}},{"en":{"cause":"","description":"FDCAN4 sync send failed","solution":"Check CAN bus load and communication status."},"id":307,"level":1,"zh_CN":{"cause":"","description":"FDCAN4同步发送失败","solution":"检查CAN总线负载与通信状态"}},{"en":{"cause":"","description":"FDCAN5 sync send failed","solution":"Check CAN bus load and communication status."},"id":308,"level":1,"zh_CN":{"cause":"","description":"FDCAN5同步发送失败","solution":"检查CAN总线负载与通信状态"}},{"en":{"cause":"","description":"FDCAN6 sync send failed","solution":"Check CAN bus load and communication status."},"id":309,"level":1,"zh_CN":{"cause":"","description":"FDCAN6同步发送失败","solution":"检查CAN总线负载与通信状态"}},{"en":{"cause":"","description":"CAN1 Node1 SDO request failed","solution":"Check CANopen device and communication."},"id":312,"level":1,"zh_CN":{"cause":"","description":"CAN1节点1SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN1 Node2 SDO request failed","solution":"Check CANopen device and communication."},"id":313,"level":1,"zh_CN":{"cause":"","description":"CAN1节点2SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN1 Node3 SDO request failed","solution":"Check CANopen device and communication."},"id":314,"level":1,"zh_CN":{"cause":"","description":"CAN1节点3SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN1 Node4 SDO request failed","solution":"Check CANopen device and communication."},"id":315,"level":1,"zh_CN":{"cause":"","description":"CAN1节点4SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN2 Node1 SDO request failed","solution":"Check CANopen device and communication."},"id":316,"level":1,"zh_CN":{"cause":"","description":"CAN2节点1SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN2 Node2 SDO request failed","solution":"Check CANopen device and communication."},"id":317,"level":1,"zh_CN":{"cause":"","description":"CAN2节点2SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN2 Node3 SDO request failed","solution":"Check CANopen device and communication."},"id":318,"level":1,"zh_CN":{"cause":"","description":"CAN2节点3SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN2 Node4 SDO request failed","solution":"Check CANopen device and communication."},"id":319,"level":1,"zh_CN":{"cause":"","description":"CAN2节点4SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN3 Node1 SDO request failed","solution":"Check CANopen device and communication."},"id":320,"level":1,"zh_CN":{"cause":"","description":"CAN3节点1SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN3 Node2 SDO request failed","solution":"Check CANopen device and communication."},"id":321,"level":1,"zh_CN":{"cause":"","description":"CAN3节点2SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN3 Node3 SDO request failed","solution":"Check CANopen device and communication."},"id":322,"level":1,"zh_CN":{"cause":"","description":"CAN3节点3SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN3 Node4 SDO request failed","solution":"Check CANopen device and communication."},"id":323,"level":1,"zh_CN":{"cause":"","description":"CAN3节点4SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN4 Node1 SDO request failed","solution":"Check CANopen device and communication."},"id":324,"level":1,"zh_CN":{"cause":"","description":"CAN4节点1SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN4 Node2 SDO request failed","solution":"Check CANopen device and communication."},"id":325,"level":1,"zh_CN":{"cause":"","description":"CAN4节点2SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN4 Node3 SDO request failed","solution":"Check CANopen device and communication."},"id":326,"level":1,"zh_CN":{"cause":"","description":"CAN4节点3SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN4 Node4 SDO request failed","solution":"Check CANopen device and communication."},"id":327,"level":1,"zh_CN":{"cause":"","description":"CAN4节点4SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN5 Node1 SDO request failed","solution":"Check CANopen device and communication."},"id":328,"level":1,"zh_CN":{"cause":"","description":"CAN5节点1SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN5 Node2 SDO request failed","solution":"Check CANopen device and communication."},"id":329,"level":1,"zh_CN":{"cause":"","description":"CAN5节点2SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN5 Node3 SDO request failed","solution":"Check CANopen device and communication."},"id":330,"level":1,"zh_CN":{"cause":"","description":"CAN5节点3SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN5 Node4 SDO request failed","solution":"Check CANopen device and communication."},"id":331,"level":1,"zh_CN":{"cause":"","description":"CAN5节点4SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN6 Node1 SDO request failed","solution":"Check CANopen device and communication."},"id":332,"level":1,"zh_CN":{"cause":"","description":"CAN6节点1SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN6 Node2 SDO request failed","solution":"Check CANopen device and communication."},"id":333,"level":1,"zh_CN":{"cause":"","description":"CAN6节点2SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN6 Node3 SDO request failed","solution":"Check CANopen device and communication."},"id":334,"level":1,"zh_CN":{"cause":"","description":"CAN6节点3SDO请求失败","solution":"检查CANopen设备与通信"}},{"en":{"cause":"","description":"CAN6 Node4 SDO request failed","solution":"Check CANopen device and communication."},"id":335,"level":1,"zh_CN":{"cause":"","description":"CAN6节点4SDO请求失败","solution":"检查CANopen设备与通信"}}]
+
+GET /settings/fourgCapacity HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 26
+
+{"enable":true,"region":3}
+
+GET /esim/iccid HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 46
+
+{"iccid":"89310701260000830451","status":true}
+
+GET /properties/customEdition HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 28
+
+{"customEdition":"Standard"}
+
+GET /settings/movement/actions HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 719
+
+# Wheeled
+[{"name":"INVALID","id":0,"type":0},{"name":"PASSIVE","id":1,"type":0},{"name":"STAND_DOWN","id":2,"type":0},{"name":"WHEEL_LOCO","id":20,"type":0},{"name":"READY","id":21,"type":0},{"name":"DRIFT","id":22,"type":0},{"name":"CHANGE_MODE","id":40,"type":0},{"name":"HANDSTAND","id":41,"type":0},{"name":"CLIMB","id":42,"type":0},{"name":"TRACK","id":43,"type":0},{"name":"HIGH_PAYLOAD","id":44,"type":0},{"name":"FOLLOW_PREPARE","id":100,"type":0},{"name":"FOLLOW","id":101,"type":0},{"name":"LINE_WALK","id":200,"type":0},{"name":"ROTATION","id":201,"type":0},{"name":"START_UP","id":202,"type":0},{"name":"SHUT_DOWN","id":203,"type":0},{"name":"COMM_FAILED","id":204,"type":0},{"name":"LOW_BATTERY","id":205,"type":0}]
+
+# Legged
+[{"name":"INVALID","id":0,"type":0},{"name":"PASSIVE","id":1,"type":0},{"name":"READY","id":46,"type":0},{"name":"STAND_DOWN","id":2,"type":0},{"name":"BALANCE_STAND","id":4,"type":0},{"name":"WALK","id":20,"type":0},{"name":"RL","id":21,"type":0},{"name":"FLYING_TROT","id":22,"type":1},{"name":"DANCE0","id":40,"type":0},{"name":"JUMP","id":41,"type":1},{"name":"WAVE","id":42,"type":0},{"name":"BACK_FLIP","id":43,"type":1},{"name":"RECOVERY","id":44,"type":1},{"name":"CHANGE_MODE","id":45,"type":0},{"name":"CHOREO","id":48,"type":0},{"name":"TRACK","id":49,"type":0},{"name":"FOLLOW_PREPARE","id":100,"type":0},{"name":"FOLLOW","id":101,"type":0},{"name":"LINE_WALK","id":200,"type":0},{"name":"ROTATION","id":201,"type":0},{"name":"START_UP","id":202,"type":0},{"name":"SHUT_DOWN","id":203,"type":0},{"name":"COMM_FAILED","id":204,"type":0},{"name":"LOW_BATTERY","id":205,"type":0}]
+
+GET /settings/version HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 445
+
+{"controller":"1.2.1.0-stable-6cddf59ce-202606250914-Global","system":"v1.1.0","algs":"1.2.1.0-stable+e553923.202606301415","can":"1.0.3.7","bms":"1.0.2.1","batteryGroupId":"0.0.0.2","audio":"3.2.5","servo":{"left_front_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"right_front_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"left_rear_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"right_rear_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"]}}
+
+GET /settings/bmsCalibration HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 46
+
+{"iccid":"89310701260000830451","status":true}
+
+GET /esim/iccid HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:17:25 GMT
+Content-Length: 26
+
+{"needsCalibration":false}
+
+GET /settings/ota/checkUpdate HTTP/1.1
+Host: 192.168.1.39:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:42:50 GMT
+Content-Length: 25891
+
+{"status":true,"hasUpdate":false,"totalSize":0.0,"firmwareDesc":"<article class=\"4ever-article\" data-clipboard-cangjie=\"[&quot;root&quot;,{},[&quot;p&quot;,{&quot;uuid&quot;:&quot;mqex3c7sl1i7qis57u9&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;注：该固件版本需搭配 1.2.1 版本 App 使用。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr3624anu2bg7e0s7oe&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;1. 新增 UWB 信标配对功能，更新后需先先开启信标，并且 app 进入【我的】-【跟随信标】进行信标绑定操作后即可正常使用。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr36jnot2tvxwqmorpt&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;2. 新增 UWB 信标语音对话功能，长按信标主按键，在灯光变为黄色后，即可无需唤醒进行语音对话。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr36ktf57kofj48szsf&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;3. 新增 UWB 信标快捷启动自主跟随功能，在机器狗站立状态下，双击两下信标主按键，即可自动开启自主跟随，双击两下即可退出。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr36nyd1go8gflka6hv&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;4. 牵引模式优化，新增牵引模式中，前方遇到障碍物自动减速。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr36oc7h2aw5a4iy3fi&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;5. 优化停障功能，引入动态调整避障检测距离，提升停障效果。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr36peplpe2ikqvofxa&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;6. 自主跟随模式下，机器狗不会自动后退，提升安全性。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr36zup0wcs5z9st9l&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;7. 新增在线解绑功能，在未连接机器狗的情况下，支持使用 app 解绑，解绑后机器狗有网络时重启即可同步解绑状态。&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr370sw825700bguzbp&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;8. 点足开放空翻动作，使用时务必注意安全，附近预留至少 1.5 米以上安全距离。&quot;]]]]\" data-identifier-application__slash__x-cangjie-fragment=\"JTdCJTIya2xhc3MlMjIlM0ElMjJkb2N1bWVudCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIyYmxvY2slMjIlMkMlMjJ0eXBlJTIyJTNBJTIycGFyYWdyYXBoJTIyJTJDJTIyZGF0YSUyMiUzQSU3QiUyMnV1aWQlMjIlM0ElMjJtcWV4M2M3c2wxaTdxaXM1N3U5JTIyJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyJUU2JUIzJUE4JUVGJUJDJTlBJUU4JUFGJUE1JUU1JTlCJUJBJUU0JUJCJUI2JUU3JTg5JTg4JUU2JTlDJUFDJUU5JTlDJTgwJUU2JTkwJUFEJUU5JTg1JThEJTIwMS4yLjElMjAlRTclODklODglRTYlOUMlQUMlMjBBcHAlMjAlRTQlQkQlQkYlRTclOTQlQTglRTMlODAlODIlMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCU1RCU3RCU1RCUyQyUyMmNvbnRlbnRUeXBlJTIyJTNBJTIyY2FuZ2ppZS10ZXh0YmxvY2slMjIlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmJsb2NrJTIyJTJDJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlMjJ1dWlkJTIyJTNBJTIybXIzNjI0YW51MmJnN2UwczdvZSUyMiU3RCUyQyUyMm5vZGVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGVhdmVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJsZWFmJTIyJTJDJTIydGV4dCUyMiUzQSUyMjEuJTIwJUU2JTk2JUIwJUU1JUEyJTlFJTIwVVdCJTIwJUU0JUJGJUExJUU2JUEwJTg3JUU5JTg1JThEJUU1JUFGJUI5JUU1JThBJTlGJUU4JTgzJUJEJUVGJUJDJThDJUU2JTlCJUI0JUU2JTk2JUIwJUU1JTkwJThFJUU5JTlDJTgwJUU1JTg1JTg4JUU1JTg1JTg4JUU1JUJDJTgwJUU1JTkwJUFGJUU0JUJGJUExJUU2JUEwJTg3JUVGJUJDJThDJUU1JUI5JUI2JUU0JUI4JTk0JTIwYXBwJTIwJUU4JUJGJTlCJUU1JTg1JUE1JUUzJTgwJTkwJUU2JTg4JTkxJUU3JTlBJTg0JUUzJTgwJTkxLSVFMyU4MCU5MCVFOCVCNyU5RiVFOSU5QSU4RiVFNCVCRiVBMSVFNiVBMCU4NyVFMyU4MCU5MSVFOCVCRiU5QiVFOCVBMSU4QyVFNCVCRiVBMSVFNiVBMCU4NyVFNyVCQiU5MSVFNSVBRSU5QSVFNiU5MyU4RCVFNCVCRCU5QyVFNSU5MCU4RSVFNSU4RCVCMyVFNSU4RiVBRiVFNiVBRCVBMyVFNSVCOCVCOCVFNCVCRCVCRiVFNyU5NCVBOCVFMyU4MCU4MiUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTVEJTdEJTVEJTdEJTVEJTJDJTIyY29udGVudFR5cGUlMjIlM0ElMjJjYW5namllLXRleHRibG9jayUyMiU3RCUyQyU3QiUyMmtsYXNzJTIyJTNBJTIyYmxvY2slMjIlMkMlMjJ0eXBlJTIyJTNBJTIycGFyYWdyYXBoJTIyJTJDJTIyZGF0YSUyMiUzQSU3QiUyMnV1aWQlMjIlM0ElMjJtcjM2am5vdDJ0dnh3cW1vcnB0JTIyJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyMi4lMjAlRTYlOTYlQjAlRTUlQTIlOUUlMjBVV0IlMjAlRTQlQkYlQTElRTYlQTAlODclRTglQUYlQUQlRTklOUYlQjMlRTUlQUYlQjklRTglQUYlOUQlRTUlOEElOUYlRTglODMlQkQlRUYlQkMlOEMlRTklOTUlQkYlRTYlOEMlODklRTQlQkYlQTElRTYlQTAlODclRTQlQjglQkIlRTYlOEMlODklRTklOTQlQUUlRUYlQkMlOEMlRTUlOUMlQTglRTclODElQUYlRTUlODUlODklRTUlOEYlOTglRTQlQjglQkElRTklQkIlODQlRTglODklQjIlRTUlOTAlOEUlRUYlQkMlOEMlRTUlOEQlQjMlRTUlOEYlQUYlRTYlOTclQTAlRTklOUMlODAlRTUlOTQlQTQlRTklODYlOTIlRTglQkYlOUIlRTglQTElOEMlRTglQUYlQUQlRTklOUYlQjMlRTUlQUYlQjklRTglQUYlOUQlRTMlODAlODIlMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCU1RCU3RCU1RCUyQyUyMmNvbnRlbnRUeXBlJTIyJTNBJTIyY2FuZ2ppZS10ZXh0YmxvY2slMjIlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmJsb2NrJTIyJTJDJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlMjJ1dWlkJTIyJTNBJTIybXIzNmt0ZjU3a29majQ4c3pzZiUyMiU3RCUyQyUyMm5vZGVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGVhdmVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJsZWFmJTIyJTJDJTIydGV4dCUyMiUzQSUyMjMuJTIwJUU2JTk2JUIwJUU1JUEyJTlFJTIwVVdCJTIwJUU0JUJGJUExJUU2JUEwJTg3JUU1JUJGJUFCJUU2JThEJUI3JUU1JTkwJUFGJUU1JThBJUE4JUU4JTg3JUFBJUU0JUI4JUJCJUU4JUI3JTlGJUU5JTlBJThGJUU1JThBJTlGJUU4JTgzJUJEJUVGJUJDJThDJUU1JTlDJUE4JUU2JTlDJUJBJUU1JTk5JUE4JUU3JThCJTk3JUU3JUFCJTk5JUU3JUFCJThCJUU3JThBJUI2JUU2JTgwJTgxJUU0JUI4JThCJUVGJUJDJThDJUU1JThGJThDJUU1JTg3JUJCJUU0JUI4JUE0JUU0JUI4JThCJUU0JUJGJUExJUU2JUEwJTg3JUU0JUI4JUJCJUU2JThDJTg5JUU5JTk0JUFFJUVGJUJDJThDJUU1JThEJUIzJUU1JThGJUFGJUU4JTg3JUFBJUU1JThBJUE4JUU1JUJDJTgwJUU1JTkwJUFGJUU4JTg3JUFBJUU0JUI4JUJCJUU4JUI3JTlGJUU5JTlBJThGJUVGJUJDJThDJUU1JThGJThDJUU1JTg3JUJCJUU0JUI4JUE0JUU0JUI4JThCJUU1JThEJUIzJUU1JThGJUFGJUU5JTgwJTgwJUU1JTg3JUJBJUUzJTgwJTgyJTIyJTJDJTIybWFya3MlMjIlM0ElNUIlNUQlN0QlNUQlN0QlNUQlMkMlMjJjb250ZW50VHlwZSUyMiUzQSUyMmNhbmdqaWUtdGV4dGJsb2NrJTIyJTdEJTJDJTdCJTIya2xhc3MlMjIlM0ElMjJibG9jayUyMiUyQyUyMnR5cGUlMjIlM0ElMjJwYXJhZ3JhcGglMjIlMkMlMjJkYXRhJTIyJTNBJTdCJTIydXVpZCUyMiUzQSUyMm1yMzZueWQxZ284Z2Zsa2E2aHYlMjIlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxlYXZlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIybGVhZiUyMiUyQyUyMnRleHQlMjIlM0ElMjI0LiUyMCVFNyU4OSVCNSVFNSVCQyU5NSVFNiVBOCVBMSVFNSVCQyU4RiVFNCVCQyU5OCVFNSU4QyU5NiVFRiVCQyU4QyVFNiU5NiVCMCVFNSVBMiU5RSVFNyU4OSVCNSVFNSVCQyU5NSVFNiVBOCVBMSVFNSVCQyU4RiVFNCVCOCVBRCVFRiVCQyU4QyVFNSU4OSU4RCVFNiU5NiVCOSVFOSU4MSU4NyVFNSU4OCVCMCVFOSU5QSU5QyVFNyVBMiU4RCVFNyU4OSVBOSVFOCU4NyVBQSVFNSU4QSVBOCVFNSU4NyU4RiVFOSU4MCU5RiVFMyU4MCU4MiUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTVEJTdEJTVEJTdEJTVEJTJDJTIyY29udGVudFR5cGUlMjIlM0ElMjJjYW5namllLXRleHRibG9jayUyMiU3RCUyQyU3QiUyMmtsYXNzJTIyJTNBJTIyYmxvY2slMjIlMkMlMjJ0eXBlJTIyJTNBJTIycGFyYWdyYXBoJTIyJTJDJTIyZGF0YSUyMiUzQSU3QiUyMnV1aWQlMjIlM0ElMjJtcjM2b2M3aDJhdzVhNGl5M2ZpJTIyJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyNS4lMjAlRTQlQkMlOTglRTUlOEMlOTYlRTUlODElOUMlRTklOUElOUMlRTUlOEElOUYlRTglODMlQkQlRUYlQkMlOEMlRTUlQkMlOTUlRTUlODUlQTUlRTUlOEElQTglRTYlODAlODElRTglQjAlODMlRTYlOTUlQjQlRTklODElQkYlRTklOUElOUMlRTYlQTMlODAlRTYlQjUlOEIlRTglQjclOUQlRTclQTYlQkIlRUYlQkMlOEMlRTYlOEYlOTAlRTUlOEQlODclRTUlODElOUMlRTklOUElOUMlRTYlOTUlODglRTYlOUUlOUMlRTMlODAlODIlMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCU1RCU3RCU1RCUyQyUyMmNvbnRlbnRUeXBlJTIyJTNBJTIyY2FuZ2ppZS10ZXh0YmxvY2slMjIlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmJsb2NrJTIyJTJDJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlMjJ1dWlkJTIyJTNBJTIybXIzNnBlcGxwZTJpa3F2b2Z4YSUyMiU3RCUyQyUyMm5vZGVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGVhdmVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJsZWFmJTIyJTJDJTIydGV4dCUyMiUzQSUyMjYuJTIwJUU4JTg3JUFBJUU0JUI4JUJCJUU4JUI3JTlGJUU5JTlBJThGJUU2JUE4JUExJUU1JUJDJThGJUU0JUI4JThCJUVGJUJDJThDJUU2JTlDJUJBJUU1JTk5JUE4JUU3JThCJTk3JUU0JUI4JThEJUU0JUJDJTlBJUU4JTg3JUFBJUU1JThBJUE4JUU1JTkwJThFJUU5JTgwJTgwJUVGJUJDJThDJUU2JThGJTkwJUU1JThEJTg3JUU1JUFFJTg5JUU1JTg1JUE4JUU2JTgwJUE3JUUzJTgwJTgyJTIyJTJDJTIybWFya3MlMjIlM0ElNUIlNUQlN0QlNUQlN0QlNUQlMkMlMjJjb250ZW50VHlwZSUyMiUzQSUyMmNhbmdqaWUtdGV4dGJsb2NrJTIyJTdEJTJDJTdCJTIya2xhc3MlMjIlM0ElMjJibG9jayUyMiUyQyUyMnR5cGUlMjIlM0ElMjJwYXJhZ3JhcGglMjIlMkMlMjJkYXRhJTIyJTNBJTdCJTIydXVpZCUyMiUzQSUyMm1yMzZ6dXAwd2NzNXo5c3Q5bCUyMiU3RCUyQyUyMm5vZGVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGVhdmVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJsZWFmJTIyJTJDJTIydGV4dCUyMiUzQSUyMjcuJTIwJUU2JTk2JUIwJUU1JUEyJTlFJUU1JTlDJUE4JUU3JUJBJUJGJUU4JUE3JUEzJUU3JUJCJTkxJUU1JThBJTlGJUU4JTgzJUJEJUVGJUJDJThDJUU1JTlDJUE4JUU2JTlDJUFBJUU4JUJGJTlFJUU2JThFJUE1JUU2JTlDJUJBJUU1JTk5JUE4JUU3JThCJTk3JUU3JTlBJTg0JUU2JTgzJTg1JUU1JTg2JUI1JUU0JUI4JThCJUVGJUJDJThDJUU2JTk0JUFGJUU2JThDJTgxJUU0JUJEJUJGJUU3JTk0JUE4JTIwYXBwJTIwJUU4JUE3JUEzJUU3JUJCJTkxJUVGJUJDJThDJUU4JUE3JUEzJUU3JUJCJTkxJUU1JTkwJThFJUU2JTlDJUJBJUU1JTk5JUE4JUU3JThCJTk3JUU2JTlDJTg5JUU3JUJEJTkxJUU3JUJCJTlDJUU2JTk3JUI2JUU5JTg3JThEJUU1JTkwJUFGJUU1JThEJUIzJUU1JThGJUFGJUU1JTkwJThDJUU2JUFEJUE1JUU4JUE3JUEzJUU3JUJCJTkxJUU3JThBJUI2JUU2JTgwJTgxJUUzJTgwJTgyJTIyJTJDJTIybWFya3MlMjIlM0ElNUIlNUQlN0QlNUQlN0QlNUQlMkMlMjJjb250ZW50VHlwZSUyMiUzQSUyMmNhbmdqaWUtdGV4dGJsb2NrJTIyJTdEJTJDJTdCJTIya2xhc3MlMjIlM0ElMjJibG9jayUyMiUyQyUyMnR5cGUlMjIlM0ElMjJwYXJhZ3JhcGglMjIlMkMlMjJkYXRhJTIyJTNBJTdCJTIydXVpZCUyMiUzQSUyMm1yMzcwc3c4MjU3MDBiZ3V6YnAlMjIlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxlYXZlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIybGVhZiUyMiUyQyUyMnRleHQlMjIlM0ElMjI4LiUyMCVFNyU4MiVCOSVFOCVCNiVCMyVFNSVCQyU4MCVFNiU5NCVCRSVFNyVBOSVCQSVFNyVCRiVCQiVFNSU4QSVBOCVFNCVCRCU5QyVFRiVCQyU4QyVFNCVCRCVCRiVFNyU5NCVBOCVFNiU5NyVCNiVFNSU4QSVBMSVFNSVCRiU4NSVFNiVCMyVBOCVFNiU4NCU4RiVFNSVBRSU4OSVFNSU4NSVBOCVFRiVCQyU4QyVFOSU5OSU4NCVFOCVCRiU5MSVFOSVBMiU4NCVFNyU5NSU5OSVFOCU4NyVCMyVFNSVCMCU5MSUyMDEuNSUyMCVFNyVCMSVCMyVFNCVCQiVBNSVFNCVCOCU4QSVFNSVBRSU4OSVFNSU4NSVBOCVFOCVCNyU5RCVFNyVBNiVCQiVFMyU4MCU4MiUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTVEJTdEJTVEJTdEJTVEJTJDJTIyY29udGVudFR5cGUlMjIlM0ElMjJjYW5namllLXRleHRibG9jayUyMiU3RCU1RCU3RA==\" data-identifier-application__slash__x-doc-key=\"4EZlweZZbPNYGqxA\">\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">注：该固件版本需搭配 1.2.1 版本 App 使用。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">1. 新增 UWB 信标配对功能，更新后需先先开启信标，并且 app 进入【我的】-【跟随信标】进行信标绑定操作后即可正常使用。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">2. 新增 UWB 信标语音对话功能，长按信标主按键，在灯光变为黄色后，即可无需唤醒进行语音对话。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">3. 新增 UWB 信标快捷启动自主跟随功能，在机器狗站立状态下，双击两下信标主按键，即可自动开启自主跟随，双击两下即可退出。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">4. 牵引模式优化，新增牵引模式中，前方遇到障碍物自动减速。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">5. 优化停障功能，引入动态调整避障检测距离，提升停障效果。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">6. 自主跟随模式下，机器狗不会自动后退，提升安全性。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">7. 新增在线解绑功能，在未连接机器狗的情况下，支持使用 app 解绑，解绑后机器狗有网络时重启即可同步解绑状态。</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">8. 点足开放空翻动作，使用时务必注意安全，附近预留至少 1.5 米以上安全距离。</span></p>\n</article>","firmwareEnDesc":"<article class=\"4ever-article\" data-clipboard-cangjie=\"[&quot;root&quot;,{},[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z08u8zg6gs5wi&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;Note: This firmware version must be used together with app version 1.2.1&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0a0h7hjfjyf57&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;1. Added UWB beacon pairing. After the update, please power on the beacon first, then go to &quot;],[&quot;span&quot;,{&quot;bold&quot;:true,&quot;data-type&quot;:&quot;leaf&quot;},&quot;User &gt; Follow Beacon&quot;],[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot; in the app to bind the beacon before use.&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0b3k7483qtp8f&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;2. Added UWB beacon voice interaction. Press and hold the main button on the beacon. When the indicator light turns yellow, you can start voice interaction without using the wake word.&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0bbt5femwwg5&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;3. Added a shortcut for starting autonomous follow via the UWB beacon. When the robot dog is standing, double-press the main button on the beacon to start autonomous follow, and double-press again to exit.&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0bktaxqf5dk2p&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;4. Optimized traction mode. The robot dog will now automatically slow down when an obstacle is detected ahead during traction mode.&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0cy97rb6vmhs&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;5. Optimized the obstacle-stop function by dynamically adjusting the obstacle detection distance, improving obstacle-stop performance.&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0ctj72or8fjll&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;6. In autonomous follow mode, the robot dog will no longer automatically move backward, improving overall safety.&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0cxcq0x7glki&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;7. Added online unbinding. When the robot dog is not connected, users can unbind it through the app. After unbinding, the robot dog will sync the unbinding status after it reconnects to the network and restarts.&quot;]]],[&quot;p&quot;,{&quot;uuid&quot;:&quot;mr372z0d1wszqkwwckui&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;text&quot;},[&quot;span&quot;,{&quot;data-type&quot;:&quot;leaf&quot;},&quot;8. Added backflip support for the point-foot version. Please pay attention to safety when using this feature and keep at least 1.5 meters of clear space around the robot dog.&quot;]]]]\" data-identifier-application__slash__x-cangjie-fragment=\"JTdCJTIya2xhc3MlMjIlM0ElMjJkb2N1bWVudCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIyYmxvY2slMjIlMkMlMjJ0eXBlJTIyJTNBJTIycGFyYWdyYXBoJTIyJTJDJTIyZGF0YSUyMiUzQSU3QiUyMnV1aWQlMjIlM0ElMjJtcjM3MnowOHU4emc2Z3M1d2klMjIlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxlYXZlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIybGVhZiUyMiUyQyUyMnRleHQlMjIlM0ElMjJOb3RlJTNBJTIwVGhpcyUyMGZpcm13YXJlJTIwdmVyc2lvbiUyMG11c3QlMjBiZSUyMHVzZWQlMjB0b2dldGhlciUyMHdpdGglMjBhcHAlMjB2ZXJzaW9uJTIwMS4yLjElMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCU1RCU3RCU1RCUyQyUyMmNvbnRlbnRUeXBlJTIyJTNBJTIyY2FuZ2ppZS10ZXh0YmxvY2slMjIlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmJsb2NrJTIyJTJDJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlMjJ1dWlkJTIyJTNBJTIybXIzNzJ6MGEwaDdoamZqeWY1NyUyMiU3RCUyQyUyMm5vZGVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGVhdmVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJsZWFmJTIyJTJDJTIydGV4dCUyMiUzQSUyMjEuJTIwQWRkZWQlMjBVV0IlMjBiZWFjb24lMjBwYWlyaW5nLiUyMEFmdGVyJTIwdGhlJTIwdXBkYXRlJTJDJTIwcGxlYXNlJTIwcG93ZXIlMjBvbiUyMHRoZSUyMGJlYWNvbiUyMGZpcnN0JTJDJTIwdGhlbiUyMGdvJTIwdG8lMjAlMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCUyQyU3QiUyMmtsYXNzJTIyJTNBJTIybGVhZiUyMiUyQyUyMnRleHQlMjIlM0ElMjJVc2VyJTIwJTNFJTIwRm9sbG93JTIwQmVhY29uJTIyJTJDJTIybWFya3MlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMm1hcmslMjIlMkMlMjJ0eXBlJTIyJTNBJTIyYm9sZCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlN0QlN0QlNUQlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyJTIwaW4lMjB0aGUlMjBhcHAlMjB0byUyMGJpbmQlMjB0aGUlMjBiZWFjb24lMjBiZWZvcmUlMjB1c2UuJTIyJTJDJTIybWFya3MlMjIlM0ElNUIlNUQlN0QlNUQlN0QlNUQlMkMlMjJjb250ZW50VHlwZSUyMiUzQSUyMmNhbmdqaWUtdGV4dGJsb2NrJTIyJTdEJTJDJTdCJTIya2xhc3MlMjIlM0ElMjJibG9jayUyMiUyQyUyMnR5cGUlMjIlM0ElMjJwYXJhZ3JhcGglMjIlMkMlMjJkYXRhJTIyJTNBJTdCJTIydXVpZCUyMiUzQSUyMm1yMzcyejBiM2s3NDgzcXRwOGYlMjIlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxlYXZlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIybGVhZiUyMiUyQyUyMnRleHQlMjIlM0ElMjIyLiUyMEFkZGVkJTIwVVdCJTIwYmVhY29uJTIwdm9pY2UlMjBpbnRlcmFjdGlvbi4lMjBQcmVzcyUyMGFuZCUyMGhvbGQlMjB0aGUlMjBtYWluJTIwYnV0dG9uJTIwb24lMjB0aGUlMjBiZWFjb24uJTIwV2hlbiUyMHRoZSUyMGluZGljYXRvciUyMGxpZ2h0JTIwdHVybnMlMjB5ZWxsb3clMkMlMjB5b3UlMjBjYW4lMjBzdGFydCUyMHZvaWNlJTIwaW50ZXJhY3Rpb24lMjB3aXRob3V0JTIwdXNpbmclMjB0aGUlMjB3YWtlJTIwd29yZC4lMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCU1RCU3RCU1RCUyQyUyMmNvbnRlbnRUeXBlJTIyJTNBJTIyY2FuZ2ppZS10ZXh0YmxvY2slMjIlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmJsb2NrJTIyJTJDJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlMjJ1dWlkJTIyJTNBJTIybXIzNzJ6MGJidDVmZW13d2c1JTIyJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyMy4lMjBBZGRlZCUyMGElMjBzaG9ydGN1dCUyMGZvciUyMHN0YXJ0aW5nJTIwYXV0b25vbW91cyUyMGZvbGxvdyUyMHZpYSUyMHRoZSUyMFVXQiUyMGJlYWNvbi4lMjBXaGVuJTIwdGhlJTIwcm9ib3QlMjBkb2clMjBpcyUyMHN0YW5kaW5nJTJDJTIwZG91YmxlLXByZXNzJTIwdGhlJTIwbWFpbiUyMGJ1dHRvbiUyMG9uJTIwdGhlJTIwYmVhY29uJTIwdG8lMjBzdGFydCUyMGF1dG9ub21vdXMlMjBmb2xsb3clMkMlMjBhbmQlMjBkb3VibGUtcHJlc3MlMjBhZ2FpbiUyMHRvJTIwZXhpdC4lMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCU1RCU3RCU1RCUyQyUyMmNvbnRlbnRUeXBlJTIyJTNBJTIyY2FuZ2ppZS10ZXh0YmxvY2slMjIlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmJsb2NrJTIyJTJDJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlMjJ1dWlkJTIyJTNBJTIybXIzNzJ6MGJrdGF4cWY1ZGsycCUyMiU3RCUyQyUyMm5vZGVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGVhdmVzJTIyJTNBJTVCJTdCJTIya2xhc3MlMjIlM0ElMjJsZWFmJTIyJTJDJTIydGV4dCUyMiUzQSUyMjQuJTIwT3B0aW1pemVkJTIwdHJhY3Rpb24lMjBtb2RlLiUyMFRoZSUyMHJvYm90JTIwZG9nJTIwd2lsbCUyMG5vdyUyMGF1dG9tYXRpY2FsbHklMjBzbG93JTIwZG93biUyMHdoZW4lMjBhbiUyMG9ic3RhY2xlJTIwaXMlMjBkZXRlY3RlZCUyMGFoZWFkJTIwZHVyaW5nJTIwdHJhY3Rpb24lMjBtb2RlLiUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTVEJTdEJTVEJTdEJTVEJTJDJTIyY29udGVudFR5cGUlMjIlM0ElMjJjYW5namllLXRleHRibG9jayUyMiU3RCUyQyU3QiUyMmtsYXNzJTIyJTNBJTIyYmxvY2slMjIlMkMlMjJ0eXBlJTIyJTNBJTIycGFyYWdyYXBoJTIyJTJDJTIyZGF0YSUyMiUzQSU3QiUyMnV1aWQlMjIlM0ElMjJtcjM3MnowY3k5N3JiNnZtaHMlMjIlN0QlMkMlMjJub2RlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxlYXZlcyUyMiUzQSU1QiU3QiUyMmtsYXNzJTIyJTNBJTIybGVhZiUyMiUyQyUyMnRleHQlMjIlM0ElMjI1LiUyME9wdGltaXplZCUyMHRoZSUyMG9ic3RhY2xlLXN0b3AlMjBmdW5jdGlvbiUyMGJ5JTIwZHluYW1pY2FsbHklMjBhZGp1c3RpbmclMjB0aGUlMjBvYnN0YWNsZSUyMGRldGVjdGlvbiUyMGRpc3RhbmNlJTJDJTIwaW1wcm92aW5nJTIwb2JzdGFjbGUtc3RvcCUyMHBlcmZvcm1hbmNlLiUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTVEJTdEJTVEJTdEJTVEJTJDJTIyY29udGVudFR5cGUlMjIlM0ElMjJjYW5namllLXRleHRibG9jayUyMiU3RCUyQyU3QiUyMmtsYXNzJTIyJTNBJTIyYmxvY2slMjIlMkMlMjJ0eXBlJTIyJTNBJTIycGFyYWdyYXBoJTIyJTJDJTIyZGF0YSUyMiUzQSU3QiUyMnV1aWQlMjIlM0ElMjJtcjM3MnowY3RqNzJvcjhmamxsJTIyJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyNi4lMjBJbiUyMGF1dG9ub21vdXMlMjBmb2xsb3clMjBtb2RlJTJDJTIwdGhlJTIwcm9ib3QlMjBkb2clMjB3aWxsJTIwbm8lMjBsb25nZXIlMjBhdXRvbWF0aWNhbGx5JTIwbW92ZSUyMGJhY2t3YXJkJTJDJTIwaW1wcm92aW5nJTIwb3ZlcmFsbCUyMHNhZmV0eS4lMjIlMkMlMjJtYXJrcyUyMiUzQSU1QiU1RCU3RCU1RCU3RCU1RCUyQyUyMmNvbnRlbnRUeXBlJTIyJTNBJTIyY2FuZ2ppZS10ZXh0YmxvY2slMjIlN0QlMkMlN0IlMjJrbGFzcyUyMiUzQSUyMmJsb2NrJTIyJTJDJTIydHlwZSUyMiUzQSUyMnBhcmFncmFwaCUyMiUyQyUyMmRhdGElMjIlM0ElN0IlMjJ1dWlkJTIyJTNBJTIybXIzNzJ6MGN4Y3EweDdnbGtpJTIyJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyNy4lMjBBZGRlZCUyMG9ubGluZSUyMHVuYmluZGluZy4lMjBXaGVuJTIwdGhlJTIwcm9ib3QlMjBkb2clMjBpcyUyMG5vdCUyMGNvbm5lY3RlZCUyQyUyMHVzZXJzJTIwY2FuJTIwdW5iaW5kJTIwaXQlMjB0aHJvdWdoJTIwdGhlJTIwYXBwLiUyMEFmdGVyJTIwdW5iaW5kaW5nJTJDJTIwdGhlJTIwcm9ib3QlMjBkb2clMjB3aWxsJTIwc3luYyUyMHRoZSUyMHVuYmluZGluZyUyMHN0YXR1cyUyMGFmdGVyJTIwaXQlMjByZWNvbm5lY3RzJTIwdG8lMjB0aGUlMjBuZXR3b3JrJTIwYW5kJTIwcmVzdGFydHMuJTIyJTJDJTIybWFya3MlMjIlM0ElNUIlNUQlN0QlNUQlN0QlNUQlMkMlMjJjb250ZW50VHlwZSUyMiUzQSUyMmNhbmdqaWUtdGV4dGJsb2NrJTIyJTdEJTJDJTdCJTIya2xhc3MlMjIlM0ElMjJibG9jayUyMiUyQyUyMnR5cGUlMjIlM0ElMjJwYXJhZ3JhcGglMjIlMkMlMjJkYXRhJTIyJTNBJTdCJTIydXVpZCUyMiUzQSUyMm1yMzcyejBkMXdzenFrd3dja3VpJTIyJTdEJTJDJTIybm9kZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMnRleHQlMjIlMkMlMjJsZWF2ZXMlMjIlM0ElNUIlN0IlMjJrbGFzcyUyMiUzQSUyMmxlYWYlMjIlMkMlMjJ0ZXh0JTIyJTNBJTIyOC4lMjBBZGRlZCUyMGJhY2tmbGlwJTIwc3VwcG9ydCUyMGZvciUyMHRoZSUyMHBvaW50LWZvb3QlMjB2ZXJzaW9uLiUyMFBsZWFzZSUyMHBheSUyMGF0dGVudGlvbiUyMHRvJTIwc2FmZXR5JTIwd2hlbiUyMHVzaW5nJTIwdGhpcyUyMGZlYXR1cmUlMjBhbmQlMjBrZWVwJTIwYXQlMjBsZWFzdCUyMDEuNSUyMG1ldGVycyUyMG9mJTIwY2xlYXIlMjBzcGFjZSUyMGFyb3VuZCUyMHRoZSUyMHJvYm90JTIwZG9nLiUyMiUyQyUyMm1hcmtzJTIyJTNBJTVCJTVEJTdEJTVEJTdEJTVEJTJDJTIyY29udGVudFR5cGUlMjIlM0ElMjJjYW5namllLXRleHRibG9jayUyMiU3RCU1RCU3RA==\" data-identifier-application__slash__x-doc-key=\"4EZlweZZbPNYGqxA\">\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">Note: This firmware version must be used together with app version 1.2.1</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">1. Added UWB beacon pairing. After the update, please power on the beacon first, then go to </span><span style=\"font-weight: bold;\" data-type=\"text\">User &gt; Follow Beacon</span><span data-type=\"text\"> in the app to bind the beacon before use.</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">2. Added UWB beacon voice interaction. Press and hold the main button on the beacon. When the indicator light turns yellow, you can start voice interaction without using the wake word.</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">3. Added a shortcut for starting autonomous follow via the UWB beacon. When the robot dog is standing, double-press the main button on the beacon to start autonomous follow, and double-press again to exit.</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">4. Optimized traction mode. The robot dog will now automatically slow down when an obstacle is detected ahead during traction mode.</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">5. Optimized the obstacle-stop function by dynamically adjusting the obstacle detection distance, improving obstacle-stop performance.</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">6. In autonomous follow mode, the robot dog will no longer automatically move backward, improving overall safety.</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">7. Added online unbinding. When the robot dog is not connected, users can unbind it through the app. After unbinding, the robot dog will sync the unbinding status after it reconnects to the network and restarts.</span></p>\n<p style=\"margin-left: 0px; margin-top: 0px; margin-bottom: 0px;\"><span data-type=\"text\">8. Added flip support for the point-foot version. Please pay attention to safety when using this feature and keep at least 1.5 meters of clear space around the robot dog.</span></p>\n</article>","uuid":"681A9F65-66A3-4D37-9363-E25029EF775E","version":""}
+
+POST /connection/type HTTP/1.1
+Host: 192.168.1.39:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 14
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"value":"AP"}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Thu, 16 Jul 2026 00:42:50 GMT
+Content-Length: 65
+
+{"ssid":"Rover-6RXC1021A24002","passWd":"12345678","status":true}
+
+POST /settings/emergencyStop HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 14
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"value":true}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Wed, 15 Jul 2026 23:45:19 GMT
+Content-Length: 15
+
+{"status":true}
+
+POST /settings/emergencyStop HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 15
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"value":false}
+
+GET /settings/streaming/download HTTP/1.1
+Host: 192.168.1.6:22001
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Server: nginx/1.28.2
+Date: Wed, 15 Jul 2026 23:45:09 GMT
+Content-Type: video/mp4
+Content-Length: 1683377
+Last-Modified: Wed, 15 Jul 2026 23:45:09 GMT
+Connection: keep-alive
+ETag: "6a581b85-19afb1"
+Content-Disposition: attachment; filename=record.mp4
+Accept-Ranges: bytes
+
+<data>
+
+POST /settings/streaming/record HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 35
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"action":"start","camera":"front"}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Wed, 15 Jul 2026 23:45:04 GMT
+Content-Length: 15
+
+{"status":true}
+
+{"action":"stop","camera":"front"}
+
+GET /api/ws?src=camera2 HTTP/1.1
+Host: 192.168.1.6:1984
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Cache-Control: no-cache
+Sec-WebSocket-Version: 13
+Sec-WebSocket-Extensions: permessage-deflate
+Origin: null
+Pragma: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Priority: u=3, i
+Accept-Encoding: gzip, deflate
+Sec-WebSocket-Key: LWztwo+isTP0OKGwtmCSJQ==
+Connection: Upgrade
+Upgrade: websocket
+
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: 9kl/ptuvG8wBPtNYTI9xqbYpIp0=
+
+{"type":"webrtc/offer","value":"v=0\r\no=- 1730874351452499885 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99 100 101 103 104 35 36 107 108 109 114 115 116 37 38 117 118 119 39\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:g6C8\r\na=ice-pwd:yazILxafp6uDcQk36e4U+8EC\r\na=ice-options:trickle\r\na=fingerprint:sha-256 17:47:0B:0A:58:23:99:89:BC:88:60:A3:2A:F6:88:30:93:0A:22:E5:02:EA:8F:E1:05:BE:44:9F:FA:2F:2A:62\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 H264/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:103 H264/90000\r\na=rtcp-fb:103 goog-remb\r\na=rtcp-fb:103 transport-cc\r\na=rtcp-fb:103 ccm fir\r\na=rtcp-fb:103 nack\r\na=rtcp-fb:103 nack pli\r\na=fmtp:103 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:104 rtx/90000\r\na=fmtp:104 apt=103\r\na=rtpmap:35 H265/90000\r\na=rtcp-fb:35 goog-remb\r\na=rtcp-fb:35 transport-cc\r\na=rtcp-fb:35 ccm fir\r\na=rtcp-fb:35 nack\r\na=rtcp-fb:35 nack pli\r\na=rtpmap:36 rtx/90000\r\na=fmtp:36 apt=35\r\na=rtpmap:107 VP8/90000\r\na=rtcp-fb:107 goog-remb\r\na=rtcp-fb:107 transport-cc\r\na=rtcp-fb:107 ccm fir\r\na=rtcp-fb:107 nack\r\na=rtcp-fb:107 nack pli\r\na=rtpmap:108 rtx/90000\r\na=fmtp:108 apt=107\r\na=rtpmap:109 VP9/90000\r\na=rtcp-fb:109 goog-remb\r\na=rtcp-fb:109 transport-cc\r\na=rtcp-fb:109 ccm fir\r\na=rtcp-fb:109 nack\r\na=rtcp-fb:109 nack pli\r\na=fmtp:109 profile-id=0\r\na=rtpmap:114 rtx/90000\r\na=fmtp:114 apt=109\r\na=rtpmap:115 VP9/90000\r\na=rtcp-fb:115 goog-remb\r\na=rtcp-fb:115 transport-cc\r\na=rtcp-fb:115 ccm fir\r\na=rtcp-fb:115 nack\r\na=rtcp-fb:115 nack pli\r\na=fmtp:115 profile-id=2\r\na=rtpmap:116 rtx/90000\r\na=fmtp:116 apt=115\r\na=rtpmap:37 AV1/90000\r\na=rtcp-fb:37 goog-remb\r\na=rtcp-fb:37 transport-cc\r\na=rtcp-fb:37 ccm fir\r\na=rtcp-fb:37 nack\r\na=rtcp-fb:37 nack pli\r\na=rtpmap:38 rtx/90000\r\na=fmtp:38 apt=37\r\na=rtpmap:117 red/90000\r\na=rtpmap:118 rtx/90000\r\na=fmtp:118 apt=117\r\na=rtpmap:119 ulpfec/90000\r\na=rtpmap:39 flexfec-03/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=fmtp:39 repair-window=10000000\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:g6C8\r\na=ice-pwd:yazILxafp6uDcQk36e4U+8EC\r\na=ice-options:trickle\r\na=fingerprint:sha-256 17:47:0B:0A:58:23:99:89:BC:88:60:A3:2A:F6:88:30:93:0A:22:E5:02:EA:8F:E1:05:BE:44:9F:FA:2F:2A:62\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\n"}
+{"type":"webrtc/candidate","value":"candidate:4198626074 1 udp 2113937151 7dbb80b6-3b48-40f5-adb3-65ded622ab04.local 63826 typ host generation 0 ufrag g6C8 network-cost 999"}
+{"type":"webrtc/answer","value":"v=0\r\no=- 4884221325014998375 1784159093 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=msid-semantic:WMS *\r\na=fingerprint:sha-256 57:6C:F6:32:9C:8D:59:B6:06:33:16:4F:BE:9A:42:2B:A2:BD:D4:C8:D6:CD:FA:4E:01:C8:EC:3E:14:D0:01:69\r\na=extmap-allow-mixed\r\na=group:BUNDLE 0 1\r\nm=video 9 UDP/TLS/RTP/SAVPF 98 35\r\nc=IN IP4 0.0.0.0\r\na=setup:active\r\na=mid:0\r\na=ice-ufrag:gIkkLJJzYmzModbM\r\na=ice-pwd:WeMuWbbMHapweADcMwfnKxfQnzMZxGNg\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:98 H264/90000\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtcp-fb:98 goog-remb \r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack \r\na=rtcp-fb:98 nack pli\r\na=rtcp-fb:98 nack \r\na=rtcp-fb:98 nack pli\r\na=rtcp-fb:98 transport-cc \r\na=rtpmap:35 H265/90000\r\na=rtcp-fb:35 goog-remb \r\na=rtcp-fb:35 ccm fir\r\na=rtcp-fb:35 nack \r\na=rtcp-fb:35 nack pli\r\na=rtcp-fb:35 nack \r\na=rtcp-fb:35 nack pli\r\na=rtcp-fb:35 transport-cc \r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=ssrc:4083352417 cname:go2rtc\r\na=ssrc:4083352417 msid:go2rtc go2rtc-video\r\na=ssrc:4083352417 mslabel:go2rtc\r\na=ssrc:4083352417 label:go2rtc-video\r\na=msid:go2rtc go2rtc-video\r\na=sendonly\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 0 8\r\nc=IN IP4 0.0.0.0\r\na=setup:active\r\na=mid:1\r\na=ice-ufrag:gIkkLJJzYmzModbM\r\na=ice-pwd:WeMuWbbMHapweADcMwfnKxfQnzMZxGNg\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:111 opus/48000/2\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtcp-fb:111 transport-cc \r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=ssrc:3543309572 cname:go2rtc\r\na=ssrc:3543309572 msid:go2rtc go2rtc-audio\r\na=ssrc:3543309572 mslabel:go2rtc\r\na=ssrc:3543309572 label:go2rtc-audio\r\na=msid:go2rtc go2rtc-audio\r\na=inactive\r\n"}
+{"type":"webrtc/candidate","value":"candidate:2275743361 1 udp 2130706431 192.168.5.2 8555 typ host ufrag gIkkLJJzYmzModbM"}
+{"type":"webrtc/candidate","value":"candidate:978741089 1 tcp 1671430143 192.168.5.2 8555 typ host tcptype passive ufrag gIkkLJJzYmzModbM"}
+{"type":"webrtc/candidate","value":"candidate:999941554 1 tcp 1671430143 192.168.1.6 8555 typ host tcptype passive ufrag gIkkLJJzYmzModbM"}
+{"type":"webrtc/candidate","value":""}
+
+POST /settings/searchLight HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 13
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"open":true}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Wed, 15 Jul 2026 23:44:41 GMT
+Content-Length: 15
+
+{"status":true}
+
+POST /settings/searchLight HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 14
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"open":false}
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":20} // Cross
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Wed, 15 Jul 2026 22:45:08 GMT
+Content-Length: 15
+
+{"status":true}
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":21} // Ready
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":40} // Switch
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":22} // DriftCar
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 8
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":2} // Crouch
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":43} // Leash
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":44} // Load
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":42} // Climb
+
+POST /settings/movement/action HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 9
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"id":41} // Handstand
+
+GET /protocol/exchange HTTP/1.1
+Host: 192.168.1.6:22000
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Wed, 15 Jul 2026 22:32:51 GMT
+Content-Length: 3339
+
+{"imu":{"quaternion":[0.9972919821739197,0.0018710000440478325,-0.050946999341249469,-0.052994001656770709],"gyroscope":[-0.005682896822690964,0.0034825950860977175,0.003299335716292262],"accelerometer":[0.9900299906730652,0.10620900243520737,9.736123085021973],"rpy":[0.009179944172501564,-0.10159454494714737,-0.10664267838001251],"temperature":0},"joint":{"left_front_leg":{"mode":[4,4,4,4],"q":[0.3916017711162567,0.45027655363082888,-1.335524320602417,-2.2013397216796877],"dq":[0.01953602023422718,0.05860805884003639,0.01953602023422718,0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[0.10989011079072952,0.03663003817200661,0.10989011079072952,0.10989011079072952],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,37,39,37],"mos_temp":[31,32,37,32],"motor_temp":[23,23,23,23],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]},"right_front_leg":{"mode":[4,4,4,4],"q":[-0.4180329740047455,0.4619731605052948,-1.3494783639907838,-1.8611538410186768],"dq":[-0.01953602023422718,-0.01953602023422718,-0.01953602023422718,-0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[0.10989011079072952,-0.03663003817200661,-0.03663003817200661,-0.03663003817200661],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,35,38,35],"mos_temp":[30,31,33,30],"motor_temp":[23,23,23,22],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]},"left_rear_leg":{"mode":[4,4,4,4],"q":[0.6695459485054016,-0.2555343806743622,1.344779133796692,7.0026397705078129],"dq":[-0.01953602023422718,-0.09768009930849076,-0.05860805884003639,0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[-0.10989011079072952,0.10989011079072952,0.10989011079072952,0.03663003817200661],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,36,39,35],"mos_temp":[29,31,37,30],"motor_temp":[23,22,22,22],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]},"right_rear_leg":{"mode":[4,4,4,4],"q":[-0.6798553466796875,-0.2841242551803589,1.3515682220458985,-12.566370010375977],"dq":[-0.01953602023422718,-0.05860805884003639,-0.05860805884003639,-0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[-0.03663003817200661,-0.03663003817200661,-0.18315018713474275,-0.10989011079072952],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,36,39,33],"mos_temp":[30,31,33,29],"motor_temp":[22,22,22,20],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]}},"bms":{"battery_level":88,"cells_voltage":[4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4040,0,0],"vtop":56,"packv":56},"uwb":{"uwb_hardware":false,"mcu_attached":false,"link":false,"battery_level":0,"charging":false,"pair_target":""},"error_code":[0],"prj_state":"stopped","prj_error":"","current_state":21,"current_sub_state":2,"emergency_stop":false,"current_motion_state":21.0,"obstacle_avoid_available":1.0,"tracking_info":{"current_state":0,"type":0,"target_id":0},"search_light_state":false,"rtc_state":"normal","fourg_enabled":false,"audio":{"isPlay":false,"type":0,"id":""},"log_upload":{"status":"idle","progress":0,"message":""}}
+
+GET /algs/settings/movement/obstacleAvoidance HTTP/1.1
+Host: 192.168.1.6:22002
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+
+HTTP/1.1 200 OK
+Keep-Alive: timeout=5, max=100
+Content-Length: 13
+Content-Type: application/json
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+
+{"open":true}
+
+POST /settings/movement/joystickControl HTTP/1.1
+Host: 192.168.1.6:22000
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 51
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"btn_move":{"x":0,"y":0},"btn_turn":{"x":0,"y":0}}
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: *
+Access-Control-Max-Age: 86400
+Content-Type: application/json;charset=utf-8
+Date: Wed, 15 Jul 2026 22:45:09 GMT
+Content-Length: 15
+
+{"status":true}
+
+{"btn_move":{"x":0,"y":26184},"btn_turn":{"x":-372,"y":0}}
+
+{"btn_move":{"x":0,"y":-31719},"btn_turn":{"x":-8219,"y":0}}
+
+{"btn_move":{"x":32767,"y":0},"btn_turn":{"x":0,"y":-6}}
+
+{"btn_move":{"x":-16653,"y":0},"btn_turn":{"x":0,"y":-6556}}
+
+{"btn_move":{"x":0,"y":6540},"btn_turn":{"x":-7706,"y":0}}
+
+{"btn_move":{"x":0,"y":5070},"btn_turn":{"x":-32372,"y":0}}
+
+POST /algs/settings/movement/obstacleAvoidance HTTP/1.1
+Host: 192.168.1.6:22002
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 13
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"open":true}
+
+HTTP/1.1 200 OK
+Keep-Alive: timeout=5, max=100
+Content-Length: 65
+Content-Type: application/json
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+
+{"message":"Obstacle avoidance setting successful","status":true}
+
+POST /algs/settings/movement/obstacleAvoidance HTTP/1.1
+Host: 192.168.1.6:22002
+Content-Type: application/json
+Connection: keep-alive
+Accept: */*
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app
+Content-Length: 14
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+
+{"open":false}
+
+HTTP/1.1 200 OK
+Keep-Alive: timeout=5, max=100
+Content-Length: 65
+Content-Type: application/json
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+
+{"message":"Obstacle avoidance setting successful","status":true}

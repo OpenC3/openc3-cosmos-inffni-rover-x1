@@ -1,0 +1,1369 @@
+# ---------------------------------------------------------------------------
+# Port 22000 - main service. Requires its own INTERFACE in plugin.txt
+# because HttpClientInterface is bound to a single host and port.
+# ---------------------------------------------------------------------------
+
+COMMAND <%= target_name %> GET_PROTOCOL_EXCHANGE BIG_ENDIAN "Gets a telemetry point"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/protocol/exchange"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_PROTOCOL_EXCHANGE_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_PROTOCOL_EXCHANGE_RESPONSE BIG_ENDIAN "Response from /protocol/exchange"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"imu":{"quaternion":[0.9972919821739197,0.0018710000440478325,-0.050946999341249469,-0.052994001656770709],"gyroscope":[-0.005682896822690964,0.0034825950860977175,0.003299335716292262],"accelerometer":[0.9900299906730652,0.10620900243520737,9.736123085021973],"rpy":[0.009179944172501564,-0.10159454494714737,-0.10664267838001251],"temperature":0},"joint":{"left_front_leg":{"mode":[4,4,4,4],"q":[0.3916017711162567,0.45027655363082888,-1.335524320602417,-2.2013397216796877],"dq":[0.01953602023422718,0.05860805884003639,0.01953602023422718,0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[0.10989011079072952,0.03663003817200661,0.10989011079072952,0.10989011079072952],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,37,39,37],"mos_temp":[31,32,37,32],"motor_temp":[23,23,23,23],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]},"right_front_leg":{"mode":[4,4,4,4],"q":[-0.4180329740047455,0.4619731605052948,-1.3494783639907838,-1.8611538410186768],"dq":[-0.01953602023422718,-0.01953602023422718,-0.01953602023422718,-0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[0.10989011079072952,-0.03663003817200661,-0.03663003817200661,-0.03663003817200661],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,35,38,35],"mos_temp":[30,31,33,30],"motor_temp":[23,23,23,22],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]},"left_rear_leg":{"mode":[4,4,4,4],"q":[0.6695459485054016,-0.2555343806743622,1.344779133796692,7.0026397705078129],"dq":[-0.01953602023422718,-0.09768009930849076,-0.05860805884003639,0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[-0.10989011079072952,0.10989011079072952,0.10989011079072952,0.03663003817200661],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,36,39,35],"mos_temp":[29,31,37,30],"motor_temp":[23,22,22,22],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]},"right_rear_leg":{"mode":[4,4,4,4],"q":[-0.6798553466796875,-0.2841242551803589,1.3515682220458985,-12.566370010375977],"dq":[-0.01953602023422718,-0.05860805884003639,-0.05860805884003639,-0.01953602023422718],"ddq":[0.0,0.0,0.0,0.0],"tau_est":[-0.03663003817200661,-0.03663003817200661,-0.18315018713474275,-0.10989011079072952],"q_raw":[0.0,0.0,0.0,0.0],"dq_raw":[0.0,0.0,0.0,0.0],"ddq_raw":[0.0,0.0,0.0,0.0],"mcu_temp":[35,36,39,33],"mos_temp":[30,31,33,29],"motor_temp":[22,22,22,20],"bus_voltage":[0,0,0,0],"is_virtual":[false,false,false,false],"error_code":[[0],[0],[0],[0]]}},"bms":{"battery_level":88,"cells_voltage":[4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4050,4040,0,0],"vtop":56,"packv":56},"uwb":{"uwb_hardware":false,"mcu_attached":false,"link":false,"battery_level":0,"charging":false,"pair_target":""},"error_code":[0],"prj_state":"stopped","prj_error":"","current_state":21,"current_sub_state":2,"emergency_stop":false,"current_motion_state":21.0,"obstacle_avoid_available":1.0,"tracking_info":{"current_state":0,"type":0,"target_id":0},"search_light_state":false,"rtc_state":"normal","fourg_enabled":false,"audio":{"isPlay":false,"type":0,"id":""},"log_upload":{"status":"idle","progress":0,"message":""}}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM Q_0 64 FLOAT
+    KEY $.imu.quaternion[0]
+  APPEND_ITEM Q_1 64 FLOAT
+    KEY $.imu.quaternion[1]
+  APPEND_ITEM Q_2 64 FLOAT
+    KEY $.imu.quaternion[2]
+  APPEND_ITEM Q_3 64 FLOAT
+    KEY $.imu.quaternion[3]
+  APPEND_ITEM GYRO_0 64 FLOAT
+    KEY $.imu.gyroscope[0]
+  APPEND_ITEM GYRO_1 64 FLOAT
+    KEY $.imu.gyroscope[1]
+  APPEND_ITEM GYRO_2 64 FLOAT
+    KEY $.imu.gyroscope[2]
+  APPEND_ITEM ACCEL_0 64 FLOAT
+    KEY $.imu.accelerometer[0]
+  APPEND_ITEM ACCEL_1 64 FLOAT
+    KEY $.imu.accelerometer[1]
+  APPEND_ITEM ACCEL_2 64 FLOAT
+    KEY $.imu.accelerometer[2]
+  APPEND_ITEM RPY_0 64 FLOAT
+    KEY $.imu.rpy[0]
+  APPEND_ITEM RPY_1 64 FLOAT
+    KEY $.imu.rpy[1]
+  APPEND_ITEM RPY_2 64 FLOAT
+    KEY $.imu.rpy[2]
+  APPEND_ITEM IMU_TEMP 64 FLOAT
+    KEY $.imu.temperature
+  APPEND_ARRAY_ITEM LEFT_FRONT_MODE 8 UINT 32
+    KEY $.joint.left_front_leg.mode
+  APPEND_ARRAY_ITEM LEFT_FRONT_Q 64 FLOAT 256
+    KEY $.joint.left_front_leg.q
+  APPEND_ARRAY_ITEM LEFT_FRONT_DQ 64 FLOAT 256
+    KEY $.joint.left_front_leg.dq
+  APPEND_ARRAY_ITEM LEFT_FRONT_DDQ 64 FLOAT 256
+    KEY $.joint.left_front_leg.ddq
+  APPEND_ARRAY_ITEM LEFT_FRONT_TAU_EST 64 FLOAT 256
+    KEY $.joint.left_front_leg.tau_est
+  APPEND_ARRAY_ITEM LEFT_FRONT_Q_RAW 64 FLOAT 256
+    KEY $.joint.left_front_leg.q_raw
+  APPEND_ARRAY_ITEM LEFT_FRONT_DQ_RAW 64 FLOAT 256
+    KEY $.joint.left_front_leg.dq_raw
+  APPEND_ARRAY_ITEM LEFT_FRONT_DDQ_RAW 64 FLOAT 256
+    KEY $.joint.left_front_leg.ddq_raw
+  APPEND_ARRAY_ITEM LEFT_FRONT_MCU_TEMP 8 INT 32
+    KEY $.joint.left_front_leg.mcu_temp
+  APPEND_ARRAY_ITEM LEFT_FRONT_MOS_TEMP 8 INT 32
+    KEY $.joint.left_front_leg.mos_temp
+  APPEND_ARRAY_ITEM LEFT_FRONT_MOTOR_TEMP 8 INT 32
+    KEY $.joint.left_front_leg.motor_temp
+  APPEND_ARRAY_ITEM LEFT_FRONT_BUS_V 8 INT 32
+    KEY $.joint.left_front_leg.bus_voltage
+  APPEND_ARRAY_ITEM LEFT_FRONT_ERROR_CODE 8 ANY 32
+    KEY $.joint.left_front_leg.error_code
+  APPEND_ARRAY_ITEM RIGHT_FRONT_MODE 8 UINT 32
+    KEY $.joint.right_front_leg.mode
+  APPEND_ARRAY_ITEM RIGHT_FRONT_Q 64 FLOAT 256
+    KEY $.joint.right_front_leg.q
+  APPEND_ARRAY_ITEM RIGHT_FRONT_DQ 64 FLOAT 256
+    KEY $.joint.right_front_leg.dq
+  APPEND_ARRAY_ITEM RIGHT_FRONT_DDQ 64 FLOAT 256
+    KEY $.joint.right_front_leg.ddq
+  APPEND_ARRAY_ITEM RIGHT_FRONT_TAU_EST 64 FLOAT 256
+    KEY $.joint.right_front_leg.tau_est
+  APPEND_ARRAY_ITEM RIGHT_FRONT_Q_RAW 64 FLOAT 256
+    KEY $.joint.right_front_leg.q_raw
+  APPEND_ARRAY_ITEM RIGHT_FRONT_DQ_RAW 64 FLOAT 256
+    KEY $.joint.right_front_leg.dq_raw
+  APPEND_ARRAY_ITEM RIGHT_FRONT_DDQ_RAW 64 FLOAT 256
+    KEY $.joint.right_front_leg.ddq_raw
+  APPEND_ARRAY_ITEM RIGHT_FRONT_MCU_TEMP 8 INT 32
+    KEY $.joint.right_front_leg.mcu_temp
+  APPEND_ARRAY_ITEM RIGHT_FRONT_MOS_TEMP 8 INT 32
+    KEY $.joint.right_front_leg.mos_temp
+  APPEND_ARRAY_ITEM RIGHT_FRONT_MOTOR_TEMP 8 INT 32
+    KEY $.joint.right_front_leg.motor_temp
+  APPEND_ARRAY_ITEM RIGHT_FRONT_BUS_V 8 INT 32
+    KEY $.joint.right_front_leg.bus_voltage
+  APPEND_ARRAY_ITEM RIGHT_FRONT_ERROR_CODE 8 ANY 32
+    KEY $.joint.right_front_leg.error_code
+  APPEND_ARRAY_ITEM LEFT_REAR_MODE 8 UINT 32
+    KEY $.joint.left_rear_leg.mode
+  APPEND_ARRAY_ITEM LEFT_REAR_Q 64 FLOAT 256
+    KEY $.joint.left_rear_leg.q
+  APPEND_ARRAY_ITEM LEFT_REAR_DQ 64 FLOAT 256
+    KEY $.joint.left_rear_leg.dq
+  APPEND_ARRAY_ITEM LEFT_REAR_DDQ 64 FLOAT 256
+    KEY $.joint.left_rear_leg.ddq
+  APPEND_ARRAY_ITEM LEFT_REAR_TAU_EST 64 FLOAT 256
+    KEY $.joint.left_rear_leg.tau_est
+  APPEND_ARRAY_ITEM LEFT_REAR_Q_RAW 64 FLOAT 256
+    KEY $.joint.left_rear_leg.q_raw
+  APPEND_ARRAY_ITEM LEFT_REAR_DQ_RAW 64 FLOAT 256
+    KEY $.joint.left_rear_leg.dq_raw
+  APPEND_ARRAY_ITEM LEFT_REAR_DDQ_RAW 64 FLOAT 256
+    KEY $.joint.left_rear_leg.ddq_raw
+  APPEND_ARRAY_ITEM LEFT_REAR_MCU_TEMP 8 INT 32
+    KEY $.joint.left_rear_leg.mcu_temp
+  APPEND_ARRAY_ITEM LEFT_REAR_MOS_TEMP 8 INT 32
+    KEY $.joint.left_rear_leg.mos_temp
+  APPEND_ARRAY_ITEM LEFT_REAR_MOTOR_TEMP 8 INT 32
+    KEY $.joint.left_rear_leg.motor_temp
+  APPEND_ARRAY_ITEM LEFT_REAR_BUS_V 8 INT 32
+    KEY $.joint.left_rear_leg.bus_voltage
+  APPEND_ARRAY_ITEM LEFT_REAR_ERROR_CODE 8 ANY 32
+    KEY $.joint.left_rear_leg.error_code
+  APPEND_ARRAY_ITEM RIGHT_REAR_MODE 8 UINT 32
+    KEY $.joint.right_rear_leg.mode
+  APPEND_ARRAY_ITEM RIGHT_REAR_Q 64 FLOAT 256
+    KEY $.joint.right_rear_leg.q
+  APPEND_ARRAY_ITEM RIGHT_REAR_DQ 64 FLOAT 256
+    KEY $.joint.right_rear_leg.dq
+  APPEND_ARRAY_ITEM RIGHT_REAR_DDQ 64 FLOAT 256
+    KEY $.joint.right_rear_leg.ddq
+  APPEND_ARRAY_ITEM RIGHT_REAR_TAU_EST 64 FLOAT 256
+    KEY $.joint.right_rear_leg.tau_est
+  APPEND_ARRAY_ITEM RIGHT_REAR_Q_RAW 64 FLOAT 256
+    KEY $.joint.right_rear_leg.q_raw
+  APPEND_ARRAY_ITEM RIGHT_REAR_DQ_RAW 64 FLOAT 256
+    KEY $.joint.right_rear_leg.dq_raw
+  APPEND_ARRAY_ITEM RIGHT_REAR_DDQ_RAW 64 FLOAT 256
+    KEY $.joint.right_rear_leg.ddq_raw
+  APPEND_ARRAY_ITEM RIGHT_REAR_MCU_TEMP 8 INT 32
+    KEY $.joint.right_rear_leg.mcu_temp
+  APPEND_ARRAY_ITEM RIGHT_REAR_MOS_TEMP 8 INT 32
+    KEY $.joint.right_rear_leg.mos_temp
+  APPEND_ARRAY_ITEM RIGHT_REAR_MOTOR_TEMP 8 INT 32
+    KEY $.joint.right_rear_leg.motor_temp
+  APPEND_ARRAY_ITEM RIGHT_REAR_BUS_V 8 INT 32
+    KEY $.joint.right_rear_leg.bus_voltage
+  APPEND_ARRAY_ITEM RIGHT_REAR_ERROR_CODE 8 ANY 32
+    KEY $.joint.right_rear_leg.error_code
+  APPEND_ITEM BATTERY_LEVEL 8 INT
+    KEY $.bms.battery_level
+  APPEND_ARRAY_ITEM CELLS_VOLTAGE 16 INT 256
+    KEY $.bms.cells_voltage
+  APPEND_ITEM VTOP 8 INT
+    KEY $.bms.vtop
+    UNITS VOLTS V
+  APPEND_ITEM PACKV 8 INT
+    KEY $.bms.packv
+    UNITS VOLTS V
+  APPEND_ITEM UWB_HARDWARE 8 BOOL
+    KEY $.uwb.uwb_hardware
+  APPEND_ITEM UWB_MCU_ATTACHED 8 BOOL
+    KEY $.uwb.mcu_attached
+  APPEND_ITEM UWB_LINK 8 BOOL
+    KEY $.uwb.link
+  APPEND_ITEM UWB_BATTERY_LEVEL 8 INT
+    KEY $.uwb.battery_level
+  APPEND_ITEM UWB_CHARGING 8 BOOL
+    KEY $.uwb.charging
+  APPEND_ITEM UWB_PAIR_TARGET 128 STRING
+    KEY $.uwb.pair_target
+  APPEND_ITEM ERROR_CODE 32 INT
+    KEY $.error_code[0]
+  APPEND_ITEM PRJ_STATE 128 STRING
+    KEY $.prj_state
+  APPEND_ITEM PRJ_ERROR 128 STRING
+    KEY $.prj_error
+  APPEND_ITEM CURRENT_STATE 8 INT
+    KEY $.current_state
+    STATE INVALID 0
+    STATE PASSIVE 1
+    STATE STAND_DOWN 2
+<% if rover_mode == 'WHEEL' %>
+    STATE WHEEL_LOCO 20
+    STATE WHEEL_READY 21
+    STATE WHEEL_DRIFT 22
+    STATE WHEEL_SWITCH 40
+    # STATE WHEEL_HANDSTAND 41 # DO NOT USE - CAN ONLY BE DONE 10 TIMES
+    STATE WHEEL_CLIMB 42
+    STATE WHEEL_TRACK 43
+    STATE WHEEL_HIGH_PAYLOAD 44
+<% else %>
+    STATE LEG_BALANCE_STAND 4
+    STATE LEG_WALK 20
+    STATE LEG_CROSS 21
+    STATE LEG_RUN 22
+    STATE LEG_DANCE 40
+    STATE LEG_JUMP 41
+    STATE LEG_WAVE 42
+    # STATE LEG_BACK_FLIP 43 # DO NOT USE - DOESN'T WORK AND CAN ONLY BE DONE 10 TIMES
+    STATE LEG_RECOVERY 44
+    STATE LEG_SWITCH 45
+    STATE LEG_READY 46
+    STATE LEG_BEG 48
+    STATE LEG_TRACK 49
+<% end %>
+    STATE FOLLOW_PREPARE 100
+    STATE FOLLOW 101
+    STATE LINE_WALK 200
+    STATE ROTATION 201
+    STATE START_UP 202
+    STATE SHUT_DOWN 203
+    STATE COMM_FAILED 204
+    STATE LOW_BATTERY 205
+  APPEND_ITEM CURRENT_SUB_STATE 8 INT
+    KEY $.current_sub_state
+    STATE FORWARD 1
+    STATE REVERSE 2
+  APPEND_ITEM EMERGENCY_STOP 8 BOOL
+    KEY $.emergency_stop
+  APPEND_ITEM CURRENT_MOTION_STATE 32 FLOAT
+    KEY $.current_motion_state
+  APPEND_ITEM OBSTACLE_AVOID_AVAILABLE 32 FLOAT
+    KEY $.obstacle_avoid_available
+  APPEND_ITEM TRACKING_CURRENT_STATE 8 INT
+    KEY $.tracking_info.current_state
+  APPEND_ITEM TRACKING_TYPE 8 INT
+    KEY $.tracking_info.type
+  APPEND_ITEM TRACKING_TARGET_ID 8 INT
+    KEY $.tracking_info.target_id
+  APPEND_ITEM SEARCH_LIGHT_STATE 8 BOOL
+    KEY $.search_light_state
+  APPEND_ITEM RTC_STATE 128 STRING
+    KEY $.rtc_state
+  APPEND_ITEM FOURG_ENABLED 8 BOOL
+    KEY $.fourg_enabled
+  APPEND_ITEM AUDIO_ISPLAY 8 BOOL
+    KEY $.audio.isPlay
+  APPEND_ITEM AUDIO_TYPE 8 INT
+    KEY $.audio.type
+  APPEND_ITEM AUDIO_ID 128 STRING
+    KEY $.audio.id
+  APPEND_ITEM LOG_UPLOAD_STATUS 128 STRING
+    KEY $.log_upload.status
+  APPEND_ITEM LOG_UPLOAD_PROGRESS 8 INT
+    KEY $.log_upload.progress
+  APPEND_ITEM LOG_UPLOAD_MESSAGE 128 STRING
+    KEY $.log_upload.message
+
+COMMAND <%= target_name %> CROUCH BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 2 2 2 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+<% if rover_mode == 'WHEEL' %>
+
+COMMAND <%= target_name %> WHEEL_LOCO BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 20 20 20 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> WHEEL_READY BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 21 21 21 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> WHEEL_DRIFT BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 22 22 22 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> WHEEL_SWITCH BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 40 40 40 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> WHEEL_CLIMB BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 42 42 42 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> WHEEL_TRACK BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 43 43 43 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> WHEEL_HIGH_PAYLOAD BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 44 44 44 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+<% else %>
+
+COMMAND <%= target_name %> LEG_BALANCE_STAND BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 4 4 4 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_WALK BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 20 20 20 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_CROSS BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 21 21 21 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_RUN BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 22 22 22 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_DANCE BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 40 40 40 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_JUMP BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 41 41 41 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_WAVE BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 42 42 42 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_SWITCH BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 45 45 45 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_READY BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 46 46 46 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_BEG BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 48 48 48 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+COMMAND <%= target_name %> LEG_TRACK BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 49 49 49 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+
+<% end %>
+
+COMMAND <%= target_name %> GET_MOVEMENT_PARAMS BIG_ENDIAN "Gets the movement parameter change allowance"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/params"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_MOVEMENT_PARAMS_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_MOVEMENT_PARAMS_RESPONSE BIG_ENDIAN "Response from GET /settings/movement/params"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"remainingTimes":9}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM REMAINING_TIMES 32 INT "Remaining number of movement parameter changes allowed"
+    KEY $.remainingTimes
+
+COMMAND <%= target_name %> GET_CONNECTION_STATE BIG_ENDIAN "Gets the current client connection state"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/connection/state"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_CONNECTION_STATE_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_CONNECTION_STATE_RESPONSE BIG_ENDIAN "Response from GET /connection/state"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"value":"connected","currentClient":2,"clientName":"apple iPhone 17 Pro","connectionType":"4G"}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM VALUE 256 STRING "Connection state, e.g. connected"
+    KEY $.value
+  APPEND_ITEM CURRENT_CLIENT 32 INT "Slot number of the currently connected client"
+    KEY $.currentClient
+  APPEND_ITEM CLIENT_NAME 512 STRING "Name of the connected client device"
+    KEY $.clientName
+  APPEND_ITEM CONNECTION_TYPE 256 STRING "Connection type, e.g. 4G, Station, AP"
+    KEY $.connectionType
+
+COMMAND <%= target_name %> SET_CONNECTION_STATE BIG_ENDIAN "Registers this client with the rover"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"currentClient":2,"clientName":"COSMOS","connectionType":"Station"}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/connection/state"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_CONNECTION_STATE_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER CURRENT_CLIENT 32 INT 0 255 2 "Client slot number to register as"
+    KEY $.currentClient
+  APPEND_PARAMETER CLIENT_NAME 512 STRING "COSMOS" "Name to report for this client"
+    KEY $.clientName
+  APPEND_PARAMETER CONNECTION_TYPE 256 STRING "Station" "Connection type: Station, AP or 4G"
+    KEY $.connectionType
+
+TELEMETRY <%= target_name %> SET_CONNECTION_STATE_RESPONSE BIG_ENDIAN "Response from POST /connection/state"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the request was accepted"
+    KEY $.status
+
+COMMAND <%= target_name %> GET_LOCK BIG_ENDIAN "Gets the rover control lock state"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/lock"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_LOCK_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_LOCK_RESPONSE BIG_ENDIAN "Response from GET /settings/lock"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"locked":false}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM LOCKED 8 BOOL "TRUE if the rover controls are locked out"
+    KEY $.locked
+
+COMMAND <%= target_name %> GET_VERSION BIG_ENDIAN "Gets the firmware versions of every rover subsystem"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/version"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_VERSION_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_VERSION_RESPONSE BIG_ENDIAN "Response from GET /settings/version"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"controller":"1.2.1.0-stable-6cddf59ce-202606250914-Global","system":"v1.1.0","algs":"1.2.1.0-stable+e553923.202606301415","can":"1.0.3.7","bms":"1.0.2.1","batteryGroupId":"0.0.0.2","audio":"3.2.5","servo":{"left_front_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"right_front_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"left_rear_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"],"right_rear_leg":["2.1.7.1","2.1.7.1","2.1.7.1","2.1.7.1"]}}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM CONTROLLER 512 STRING "Motion controller firmware version"
+    KEY $.controller
+  APPEND_ITEM SYSTEM 256 STRING "System software version"
+    KEY $.system
+  APPEND_ITEM ALGS 512 STRING "Algorithms service version"
+    KEY $.algs
+  APPEND_ITEM CAN 256 STRING "CAN bus firmware version"
+    KEY $.can
+  APPEND_ITEM BMS 256 STRING "Battery management system firmware version"
+    KEY $.bms
+  APPEND_ITEM BATTERY_GROUP_ID 256 STRING "Battery group identifier"
+    KEY $.batteryGroupId
+  APPEND_ITEM AUDIO 256 STRING "Audio subsystem version"
+    KEY $.audio
+  APPEND_ARRAY_ITEM LEFT_FRONT_SERVO 256 STRING 1024 "Left front leg servo firmware versions"
+    KEY $.servo.left_front_leg
+  APPEND_ARRAY_ITEM RIGHT_FRONT_SERVO 256 STRING 1024 "Right front leg servo firmware versions"
+    KEY $.servo.right_front_leg
+  APPEND_ARRAY_ITEM LEFT_REAR_SERVO 256 STRING 1024 "Left rear leg servo firmware versions"
+    KEY $.servo.left_rear_leg
+  APPEND_ARRAY_ITEM RIGHT_REAR_SERVO 256 STRING 1024 "Right rear leg servo firmware versions"
+    KEY $.servo.right_rear_leg
+
+COMMAND <%= target_name %> GET_UID BIG_ENDIAN "Gets the user account currently bound to the rover"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/uid"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_UID_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_UID_RESPONSE BIG_ENDIAN "Response from GET /settings/uid"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"time":"2026-07-09T23:47:33.993Z","uid":"ryan@openc3.com"}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM TIME 256 STRING "ISO8601 timestamp the account was bound"
+    KEY $.time
+  APPEND_ITEM UID 512 STRING "Bound user account identifier"
+    KEY $.uid
+
+COMMAND <%= target_name %> GET_SN_CODE BIG_ENDIAN "Gets the rover serial number"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/properties/snCode"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_SN_CODE_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_SN_CODE_RESPONSE BIG_ENDIAN "Response from GET /properties/snCode"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"snCode":"SL62026RXC1021A24002"}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM SN_CODE 256 STRING "Rover serial number"
+    KEY $.snCode
+
+COMMAND <%= target_name %> SET_LANGUAGE BIG_ENDIAN "Sets the language used for rover alarm and status text"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"language":"en"}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/language"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_LANGUAGE_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER LANGUAGE 128 STRING "en" "Language code, e.g. en, de, es, fr, ja, ko, ru, vi, zh_CN, zh_hant"
+    KEY $.language
+
+TELEMETRY <%= target_name %> SET_LANGUAGE_RESPONSE BIG_ENDIAN "Response from POST /settings/language"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the request was accepted"
+    KEY $.status
+
+COMMAND <%= target_name %> GET_ROBOT_TYPE BIG_ENDIAN "Gets the rover model type"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/properties/robotType"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_ROBOT_TYPE_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_ROBOT_TYPE_RESPONSE BIG_ENDIAN "Response from GET /properties/robotType"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"robot_type":"RoverX1-W"}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM ROBOT_TYPE 256 STRING "Rover model type"
+    KEY $.robot_type
+
+COMMAND <%= target_name %> GET_DEVICE_PROFILE BIG_ENDIAN "Gets the rover device profile name and remark"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/properties/deviceProfile"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_DEVICE_PROFILE_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_DEVICE_PROFILE_RESPONSE BIG_ENDIAN "Response from GET /properties/deviceProfile"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"name":"RoverX1-W","remark":""}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM NAME 256 STRING "Device profile name"
+    KEY $.name
+  APPEND_ITEM REMARK 512 STRING "User assigned remark"
+    KEY $.remark
+
+COMMAND <%= target_name %> GET_ALARMS_SERVO BIG_ENDIAN "Gets the servo alarm definition table"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/properties/alarmsServo"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_ALARMS_SERVO_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_ALARMS_SERVO_RESPONSE BIG_ENDIAN "Response from GET /properties/alarmsServo"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '[{"id":8752,"level":1,"en":{"cause":"","description":"Hardware overcurrent protection","solution":"If the actual current collected by the servo is greater than 90% of the maximum hardware sampling current, check whether the hardware is normal, or contact technical support engineers"}}]'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  ITEM ALARMS 0 0 ARRAY "Servo alarm definitions: id, level and localized cause/description/solution"
+    KEY $
+
+COMMAND <%= target_name %> GET_ALARMS_CONTROLLER BIG_ENDIAN "Gets the controller alarm definition table"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/properties/alarmsController"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_ALARMS_CONTROLLER_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_ALARMS_CONTROLLER_RESPONSE BIG_ENDIAN "Response from GET /properties/alarmsController"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '[{"id":1,"level":1,"en":{"cause":"","description":"Boot self-check failed: model mismatch","solution":"Check whether the hardware connection is normal. You may try restarting or contact technical support engineers."}}]'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  ITEM ALARMS 0 0 ARRAY "Controller alarm definitions: id, level and localized cause/description/solution"
+    KEY $
+
+COMMAND <%= target_name %> GET_FOURG_CAPACITY BIG_ENDIAN "Gets the 4G cellular capability state"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/fourgCapacity"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_FOURG_CAPACITY_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_FOURG_CAPACITY_RESPONSE BIG_ENDIAN "Response from GET /settings/fourgCapacity"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"enable":true,"region":3}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM ENABLE 8 BOOL "TRUE if 4G cellular is enabled"
+    KEY $.enable
+  APPEND_ITEM REGION 32 INT "4G region code"
+    KEY $.region
+
+COMMAND <%= target_name %> GET_ESIM_ICCID BIG_ENDIAN "Gets the eSIM ICCID"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/esim/iccid"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_ESIM_ICCID_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_ESIM_ICCID_RESPONSE BIG_ENDIAN "Response from GET /esim/iccid"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"iccid":"89310701260000830451","status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM ICCID 256 STRING "eSIM integrated circuit card identifier"
+    KEY $.iccid
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the ICCID was read successfully"
+    KEY $.status
+
+COMMAND <%= target_name %> GET_CUSTOM_EDITION BIG_ENDIAN "Gets the rover software edition"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/properties/customEdition"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_CUSTOM_EDITION_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_CUSTOM_EDITION_RESPONSE BIG_ENDIAN "Response from GET /properties/customEdition"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"customEdition":"Standard"}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM CUSTOM_EDITION 256 STRING "Software edition, e.g. Standard"
+    KEY $.customEdition
+
+COMMAND <%= target_name %> GET_MOVEMENT_ACTIONS BIG_ENDIAN "Gets the list of movement actions the rover supports"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/actions"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_MOVEMENT_ACTIONS_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_MOVEMENT_ACTIONS_RESPONSE BIG_ENDIAN "Response from GET /settings/movement/actions"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '[{"name":"INVALID","id":0,"type":0},{"name":"PASSIVE","id":1,"type":0},{"name":"STAND_DOWN","id":2,"type":0},{"name":"WHEEL_LOCO","id":20,"type":0},{"name":"READY","id":21,"type":0},{"name":"DRIFT","id":22,"type":0},{"name":"CHANGE_MODE","id":40,"type":0},{"name":"HANDSTAND","id":41,"type":0},{"name":"CLIMB","id":42,"type":0},{"name":"TRACK","id":43,"type":0},{"name":"HIGH_PAYLOAD","id":44,"type":0},{"name":"FOLLOW_PREPARE","id":100,"type":0},{"name":"FOLLOW","id":101,"type":0},{"name":"LINE_WALK","id":200,"type":0},{"name":"ROTATION","id":201,"type":0},{"name":"START_UP","id":202,"type":0},{"name":"SHUT_DOWN","id":203,"type":0},{"name":"COMM_FAILED","id":204,"type":0},{"name":"LOW_BATTERY","id":205,"type":0}]'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  ITEM ACTIONS 0 0 ARRAY "Supported movement actions, each with name, id and type"
+    KEY $
+
+COMMAND <%= target_name %> GET_BMS_CALIBRATION BIG_ENDIAN "Gets whether the battery management system needs calibration"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/bmsCalibration"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_BMS_CALIBRATION_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_BMS_CALIBRATION_RESPONSE BIG_ENDIAN "Response from GET /settings/bmsCalibration"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"needsCalibration":false}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM NEEDS_CALIBRATION 8 BOOL "TRUE if the BMS requires calibration"
+    KEY $.needsCalibration
+
+COMMAND <%= target_name %> GET_OTA_CHECK_UPDATE BIG_ENDIAN "Checks for an available over the air firmware update"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE ""
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/ota/checkUpdate"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "GET"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "GET_OTA_CHECK_UPDATE_RESPONSE"
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+
+TELEMETRY <%= target_name %> GET_OTA_CHECK_UPDATE_RESPONSE BIG_ENDIAN "Response from GET /settings/ota/checkUpdate"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true,"hasUpdate":false,"totalSize":0.0,"firmwareDesc":"","firmwareEnDesc":"","uuid":"681A9F65-66A3-4D37-9363-E25029EF775E","version":""}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the update check succeeded"
+    KEY $.status
+  APPEND_ITEM HAS_UPDATE 8 BOOL "TRUE if a firmware update is available"
+    KEY $.hasUpdate
+  APPEND_ITEM TOTAL_SIZE 64 FLOAT "Total download size of the update in bytes"
+    KEY $.totalSize
+  APPEND_ITEM FIRMWARE_DESC 262144 STRING "Localized release notes as HTML"
+    KEY $.firmwareDesc
+  APPEND_ITEM FIRMWARE_EN_DESC 262144 STRING "English release notes as HTML"
+    KEY $.firmwareEnDesc
+  APPEND_ITEM UUID 512 STRING "Update package UUID"
+    KEY $.uuid
+  APPEND_ITEM VERSION 256 STRING "Version of the available update"
+    KEY $.version
+
+COMMAND <%= target_name %> SET_CONNECTION_TYPE BIG_ENDIAN "Sets the rover network connection type"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"value":"AP"}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/connection/type"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_CONNECTION_TYPE_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER VALUE 128 STRING "AP" "Connection type to switch to, e.g. AP"
+    KEY $.value
+
+TELEMETRY <%= target_name %> SET_CONNECTION_TYPE_RESPONSE BIG_ENDIAN "Response from POST /connection/type"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"ssid":"Rover-6RXC1021A24002","passWd":"12345678","status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM SSID 256 STRING "SSID of the rover access point"
+    KEY $.ssid
+  APPEND_ITEM PASSWD 256 STRING "Password for the rover access point"
+    KEY $.passWd
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the connection type was changed"
+    KEY $.status
+
+COMMAND <%= target_name %> SET_EMERGENCY_STOP BIG_ENDIAN "Engages or releases the emergency stop"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"value":true}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/emergencyStop"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_EMERGENCY_STOP_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER VALUE 8 BOOL TRUE "TRUE engages the emergency stop, FALSE releases it"
+    KEY $.value
+
+TELEMETRY <%= target_name %> SET_EMERGENCY_STOP_RESPONSE BIG_ENDIAN "Response from POST /settings/emergencyStop"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the request was accepted"
+    KEY $.status
+
+COMMAND <%= target_name %> SET_STREAMING_RECORD BIG_ENDIAN "Starts or stops camera video recording"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"action":"start","camera":"front"}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/streaming/record"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_STREAMING_RECORD_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION 128 STRING "start" "Recording action"
+    KEY $.action
+    STATE START start
+    STATE STOP stop
+  APPEND_PARAMETER CAMERA 128 STRING "front" "Camera to record, e.g. front"
+    KEY $.camera
+
+TELEMETRY <%= target_name %> SET_STREAMING_RECORD_RESPONSE BIG_ENDIAN "Response from POST /settings/streaming/record"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the request was accepted"
+    KEY $.status
+
+COMMAND <%= target_name %> SET_SEARCH_LIGHT BIG_ENDIAN "Turns the search light on or off"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"open":true}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/searchLight"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_SEARCH_LIGHT_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER OPEN 8 BOOL TRUE "TRUE turns the search light on, FALSE turns it off"
+    KEY $.open
+
+TELEMETRY <%= target_name %> SET_SEARCH_LIGHT_RESPONSE BIG_ENDIAN "Response from POST /settings/searchLight"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the request was accepted"
+    KEY $.status
+
+COMMAND <%= target_name %> SET_MOVEMENT_ACTION BIG_ENDIAN "Commands the rover into a movement action / gait"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"id":21}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER ACTION_ID 32 UINT 0 205 21 "Movement action to execute, see GET_MOVEMENT_ACTIONS"
+    KEY $.id
+    STATE INVALID 0
+    STATE PASSIVE 1
+    STATE STAND_DOWN 2
+<% if rover_mode == 'WHEEL' %>
+    STATE WHEEL_LOCO 20
+    STATE WHEEL_READY 21
+    STATE WHEEL_DRIFT 22
+    STATE WHEEL_SWITCH 40
+    # STATE WHEEL_HANDSTAND 41 # DO NOT USE - CAN ONLY BE DONE 10 TIMES
+    STATE WHEEL_CLIMB 42
+    STATE WHEEL_TRACK 43
+    STATE WHEEL_HIGH_PAYLOAD 44
+<% else %>
+    STATE LEG_BALANCE_STAND 4
+    STATE LEG_WALK 20
+    STATE LEG_CROSS 21
+    STATE LEG_RUN 22
+    STATE LEG_DANCE 40
+    STATE LEG_JUMP 41
+    STATE LEG_WAVE 42
+    # STATE LEG_BACK_FLIP 43 # DO NOT USE - DOESN'T WORK AND CAN ONLY BE DONE 10 TIMES
+    STATE LEG_RECOVERY 44
+    STATE LEG_SWITCH 45
+    STATE LEG_READY 46
+    STATE LEG_BEG 48
+    STATE LEG_TRACK 49
+<% end %>
+    STATE FOLLOW_PREPARE 100
+    STATE FOLLOW 101
+    STATE LINE_WALK 200
+    STATE ROTATION 201
+    STATE START_UP 202
+    STATE SHUT_DOWN 203
+    STATE COMM_FAILED 204
+    STATE LOW_BATTERY 205
+
+TELEMETRY <%= target_name %> SET_MOVEMENT_ACTION_RESPONSE BIG_ENDIAN "Response from POST /settings/movement/action"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the request was accepted"
+    KEY $.status
+
+COMMAND <%= target_name %> SET_JOYSTICK_CONTROL BIG_ENDIAN "Sends a virtual joystick move and turn command"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"btn_move":{"x":0,"y":0},"btn_turn":{"x":0,"y":0}}'
+  PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/joystickControl"
+  PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
+  PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_JOYSTICK_CONTROL_RESPONSE"
+  PARAMETER HTTP_HEADER_CONTENT_TYPE 0 0 DERIVED nil nil "application/json"
+    KEY Content-Type
+  PARAMETER HTTP_HEADER_ACCEPT 0 0 DERIVED nil nil "*/*"
+    KEY Accept
+  PARAMETER HTTP_HEADER_ACCEPT_LANGUAGE 0 0 DERIVED nil nil "en-US,en;q=0.9"
+    KEY Accept-Language
+  PARAMETER HTTP_HEADER_CONNECTION 0 0 DERIVED nil nil "keep-alive"
+    KEY Connection
+  PARAMETER HTTP_HEADER_ACCEPT_ENCODING 0 0 DERIVED nil nil "gzip, deflate"
+    KEY Accept-Encoding
+  PARAMETER HTTP_HEADER_USER_AGENT 0 0 DERIVED nil nil "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app"
+    KEY User-Agent
+  APPEND_PARAMETER MOVE_X 16 INT -32768 32767 0 "Move joystick X axis, strafe left / right"
+    KEY $.btn_move.x
+  APPEND_PARAMETER MOVE_Y 16 INT -32768 32767 0 "Move joystick Y axis, forward / reverse"
+    KEY $.btn_move.y
+  APPEND_PARAMETER TURN_X 16 INT -32768 32767 0 "Turn joystick X axis, yaw left / right"
+    KEY $.btn_turn.x
+  APPEND_PARAMETER TURN_Y 16 INT -32768 32767 0 "Turn joystick Y axis, pitch up / down"
+    KEY $.btn_turn.y
+
+TELEMETRY <%= target_name %> SET_JOYSTICK_CONTROL_RESPONSE BIG_ENDIAN "Response from POST /settings/movement/joystickControl"
+  ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
+  TEMPLATE '{"status":true}'
+  ITEM HTTP_STATUS 0 0 DERIVED
+  APPEND_ITEM STATUS 8 BOOL "TRUE if the request was accepted"
+    KEY $.status
