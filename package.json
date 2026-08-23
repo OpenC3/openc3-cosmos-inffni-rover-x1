@@ -1,0 +1,20 @@
+{
+  "name": "openc3-cosmos-inffni-rover-x1-widgets",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:3d && npm run build:2d",
+    "build:3d": "vite build -c vite-RobotdogWidget.config.js",
+    "build:2d": "vite build -c vite-Robotdog2dWidget.config.js"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.2.1",
+    "vite-plugin-style-inject": "^0.0.1",
+    "vue": "^3.5.13"
+  }
+}

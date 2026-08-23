@@ -11,6 +11,14 @@ VARIABLE client_streaming_port 22001
 VARIABLE client_algs_port 22002
 VARIABLE client_protocol http
 
+# Custom screen widget: ROBOTDOG -> tools/widgets/RobotdogWidget
+WIDGET ROBOTDOG
+  DISABLE_ERB # The bundled three.js must not be ERB processed
+
+# Custom screen widget: ROBOTDOG2D -> tools/widgets/Robotdog2dWidget
+WIDGET ROBOTDOG2D
+  DISABLE_ERB
+
 TARGET ROVER <%= rover_target_name %>
 TARGET ROVER_STREAMING <%= rover_target_name %>_STREAMING
 TARGET ROVER_ALGS <%= rover_target_name %>_ALGS
