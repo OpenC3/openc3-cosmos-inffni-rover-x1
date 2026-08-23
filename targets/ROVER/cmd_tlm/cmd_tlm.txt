@@ -281,7 +281,7 @@ COMMAND <%= target_name %> CROUCH BIG_ENDIAN "Commands the rover into a movement
 
 COMMAND <%= target_name %> WHEEL_LOCO BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":20}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -323,7 +323,7 @@ COMMAND <%= target_name %> WHEEL_READY BIG_ENDIAN "Commands the rover into a mov
 
 COMMAND <%= target_name %> WHEEL_DRIFT BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":22}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -344,7 +344,7 @@ COMMAND <%= target_name %> WHEEL_DRIFT BIG_ENDIAN "Commands the rover into a mov
 
 COMMAND <%= target_name %> WHEEL_SWITCH BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":40}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -365,7 +365,7 @@ COMMAND <%= target_name %> WHEEL_SWITCH BIG_ENDIAN "Commands the rover into a mo
 
 COMMAND <%= target_name %> WHEEL_CLIMB BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":42}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -386,7 +386,7 @@ COMMAND <%= target_name %> WHEEL_CLIMB BIG_ENDIAN "Commands the rover into a mov
 
 COMMAND <%= target_name %> WHEEL_TRACK BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":43}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -407,7 +407,7 @@ COMMAND <%= target_name %> WHEEL_TRACK BIG_ENDIAN "Commands the rover into a mov
 
 COMMAND <%= target_name %> WHEEL_HIGH_PAYLOAD BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":44}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -430,7 +430,7 @@ COMMAND <%= target_name %> WHEEL_HIGH_PAYLOAD BIG_ENDIAN "Commands the rover int
 
 COMMAND <%= target_name %> LEG_BALANCE_STAND BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":4}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -451,7 +451,7 @@ COMMAND <%= target_name %> LEG_BALANCE_STAND BIG_ENDIAN "Commands the rover into
 
 COMMAND <%= target_name %> LEG_WALK BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":20}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -493,7 +493,7 @@ COMMAND <%= target_name %> LEG_CROSS BIG_ENDIAN "Commands the rover into a movem
 
 COMMAND <%= target_name %> LEG_RUN BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":22}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -514,7 +514,7 @@ COMMAND <%= target_name %> LEG_RUN BIG_ENDIAN "Commands the rover into a movemen
 
 COMMAND <%= target_name %> LEG_DANCE BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":40}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -535,7 +535,7 @@ COMMAND <%= target_name %> LEG_DANCE BIG_ENDIAN "Commands the rover into a movem
 
 COMMAND <%= target_name %> LEG_JUMP BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":41}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -556,7 +556,7 @@ COMMAND <%= target_name %> LEG_JUMP BIG_ENDIAN "Commands the rover into a moveme
 
 COMMAND <%= target_name %> LEG_WAVE BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":42}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -577,7 +577,7 @@ COMMAND <%= target_name %> LEG_WAVE BIG_ENDIAN "Commands the rover into a moveme
 
 COMMAND <%= target_name %> LEG_SWITCH BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":45}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -598,7 +598,7 @@ COMMAND <%= target_name %> LEG_SWITCH BIG_ENDIAN "Commands the rover into a move
 
 COMMAND <%= target_name %> LEG_READY BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":46}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -619,7 +619,7 @@ COMMAND <%= target_name %> LEG_READY BIG_ENDIAN "Commands the rover into a movem
 
 COMMAND <%= target_name %> LEG_BEG BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":48}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
@@ -640,7 +640,7 @@ COMMAND <%= target_name %> LEG_BEG BIG_ENDIAN "Commands the rover into a movemen
 
 COMMAND <%= target_name %> LEG_TRACK BIG_ENDIAN "Commands the rover into a movement action / gait"
   ACCESSOR openc3/accessors/http_accessor.py openc3/accessors/json_accessor.py
-  TEMPLATE '{"id":21}'
+  TEMPLATE '{"id":49}'
   PARAMETER HTTP_PATH 0 0 DERIVED nil nil "/settings/movement/action"
   PARAMETER HTTP_METHOD 0 0 DERIVED nil nil "POST"
   PARAMETER HTTP_PACKET 0 0 DERIVED nil nil "SET_MOVEMENT_ACTION_RESPONSE"
